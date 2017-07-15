@@ -9,11 +9,16 @@ import { NewsPage } from '../pages/news/news';
 import { DetailsPage } from '../pages/details/details';
 import { UserPage } from '../pages/user/user';
 import { SearchPage } from '../pages/search/search';
+import { MapPage } from '../pages/map/map';
 
 import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { LocationsProvider } from '../providers/locations/locations';
+import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
+import { ConnectivityProvider } from '../providers/connectivity/connectivity';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DetailsPage,
     UserPage,
     SearchPage,
+    MapPage,
   ],
   imports: [
     BrowserModule,
@@ -39,11 +45,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DetailsPage,
     UserPage,
     SearchPage,
+    MapPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LocationsProvider, GoogleMapsProvider, ConnectivityProvider, 
   ]
 })
 export class AppModule {}

@@ -4,6 +4,8 @@ import {NewsPage} from '../news/news';
 import {UserPage} from '../user/user';
 import {SearchPage} from '../search/search';
 
+import {MapPage} from '../map/map';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -19,7 +21,7 @@ export class HomePage {
     this.navCtrl.push(UserPage)
   }
   nearMe(){
-    this.navCtrl.push(SearchPage)
+    this.navCtrl.push(MapPage)
   }
   searchOpto(){
     this.navCtrl.push(SearchPage)
