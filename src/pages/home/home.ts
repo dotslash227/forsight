@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {NewsPage} from '../news/news';
+import {UserPage} from '../user/user';
 
 @Component({
   selector: 'page-home',
@@ -13,4 +14,14 @@ export class HomePage {
     this.navCtrl.push(NewsPage, {
     })
   }
+  profile(){
+    this.navCtrl.push(UserPage)
+  }
+  nearMe(){
+    this.navCtrl.push(UserPage)
+  }
+  searchOpto(){
+    this.navCtrl.push(UserPage)
+  }
+
 }
