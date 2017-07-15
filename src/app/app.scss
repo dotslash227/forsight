@@ -14,3 +14,24 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.background-image{
+    position: fixed;
+    // background-size:cover;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background-image: url('../assets/icon/opto.jpg');
+    // background-image: url('../assets/icon/green.png');
+    height: 100%;
+    width: 100%;
+
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+ion-card{
+  background-color: green;
+}

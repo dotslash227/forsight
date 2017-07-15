@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { NewsPage } from '../pages/news/news';
 import { DetailsPage } from '../pages/details/details';
 import { UserPage } from '../pages/user/user';
+import { SearchPage } from '../pages/search/search';
 
 import { ListPage } from '../pages/list/list';
 
@@ -22,6 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NewsPage,
     DetailsPage,
     UserPage,
+    SearchPage,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NewsPage,
     DetailsPage,
     UserPage,
+    SearchPage,
   ],
   providers: [
     StatusBar,

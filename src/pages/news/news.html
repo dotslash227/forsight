@@ -6,23 +6,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
-    <ion-card *ngFor="let item of items">
-
-      <ion-item >
-        <h2>{{item.data.title}}</h2>
-        <p>
-          <ion-icon name="thumbs-up">{{item.data.score}}</ion-icon>&nbsp;&nbsp;
-          <ion-icon name="chatboxes">{{item.data.num_comments}}</ion-icon>
-        </p>
-        <button ion-button clear item-right (click)="viewItem(item.data)">View</button>
-
-        <ion-thumbnail *ngIf="item.data.thumbnail" item-end>
-          <img src="{{item.data.thumbnail}}" width="50px" height="50px" alt="">
-        </ion-thumbnail>
-      </ion-item>
-
-    </ion-card>
+<ion-content >
+  <div class="background-image"></div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6 *ngFor="let item of items">
+        <ion-card >
+          <ion-card-header>
+            <ion-item>
+              <h2>{{item.data.title}}</h2>
+              <p>
+                <ion-icon name="thumbs-up">{{item.data.score}}</ion-icon>&nbsp;&nbsp;
+                <ion-icon name="chatboxes">{{item.data.num_comments}}</ion-icon>
+              </p>
+              <button ion-button clear item-right (click)="viewItem(item.data)">View</button>
+              <ion-thumbnail *ngIf="item.data.thumbnail" item-end>
+                <img src="{{item.data.thumbnail}}" width="50px" height="50px" alt="">
+              </ion-thumbnail>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
