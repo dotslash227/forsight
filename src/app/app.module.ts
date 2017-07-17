@@ -9,6 +9,8 @@ import { NewsPage } from '../pages/news/news';
 import { DetailsPage } from '../pages/details/details';
 import { UserPage } from '../pages/user/user';
 import { SearchPage } from '../pages/search/search';
+import { SearchResultPage } from '../pages/search/searchResult';
+
 import { MapPage } from '../pages/map/map';
 
 import { ListPage } from '../pages/list/list';
@@ -29,6 +31,7 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
     DetailsPage,
     UserPage,
     SearchPage,
+    SearchResultPage,
     MapPage,
   ],
   imports: [
@@ -45,13 +48,14 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
     DetailsPage,
     UserPage,
     SearchPage,
+    SearchResultPage,
     MapPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LocationsProvider, GoogleMapsProvider, ConnectivityProvider, 
+    LocationsProvider, GoogleMapsProvider, ConnectivityProvider,
   ]
 })
 export class AppModule {}

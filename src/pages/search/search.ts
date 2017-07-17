@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Data} from '../../app/services/data.service';
-
+import {SearchResultPage} from './searchResult';
 
 @Component({
   selector: 'search',
@@ -28,7 +28,11 @@ export class SearchPage {
     }
 
   }
-
+  search(item){
+    this.navCtrl.push(SearchResultPage, {
+      'item': item,
+    })
+  }
 
 
 }
