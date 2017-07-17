@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Edit Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="background-image"></div>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Age:</ion-label>
+      <ion-input type="number" [(ngModel)]="age"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Phone:</ion-label>
+      <ion-input type="number" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Address:</ion-label>
+      <ion-input type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>OD:</ion-label>
+      <ion-input type="text" [(ngModel)]="od"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>OS:</ion-label>
+      <ion-input type="text" [(ngModel)]="os"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>VA:</ion-label>
+      <ion-input type="text" [(ngModel)]="va"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="setData()">Update Profile</button>
+  </div>
+
+
+</ion-content>

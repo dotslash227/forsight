@@ -8,6 +8,8 @@ import { HomePage } from '../pages/home/home';
 import { NewsPage } from '../pages/news/news';
 import { DetailsPage } from '../pages/details/details';
 import { UserPage } from '../pages/user/user';
+import { EditUserPage } from '../pages/user/editUser';
+
 import { SearchPage } from '../pages/search/search';
 import { SearchResultPage } from '../pages/search/searchResult';
 
@@ -22,6 +24,10 @@ import { LocationsProvider } from '../providers/locations/locations';
 import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
 import { ConnectivityProvider } from '../providers/connectivity/connectivity';
 
+
+import { IonicStorageModule } from '@ionic/storage';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -30,6 +36,7 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
     NewsPage,
     DetailsPage,
     UserPage,
+    EditUserPage,
     SearchPage,
     SearchResultPage,
     MapPage,
@@ -38,6 +45,7 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,6 +55,7 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
     NewsPage,
     DetailsPage,
     UserPage,
+    EditUserPage,
     SearchPage,
     SearchResultPage,
     MapPage,

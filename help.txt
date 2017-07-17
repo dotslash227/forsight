@@ -35,3 +35,7 @@ npm install @types/cordova-plugin-network-information --save (optional)
 
 
 [link for maps help=> https://www.joshmorony.com/create-a-nearby-places-list-with-google-maps-in-ionic-2-part-1/]
+
+
+ionic cordova plugin add cordova-sqlite-storage
+npm install --save @ionic/storage

@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import {EditUserPage} from './editUser';
 import {HomePage} from '../home/home';
-import { PlatformLocation } from '@angular/common';
-
 @Component({
-  selector: 'page-user',
-  templateUrl: 'user.html'
+  selector: 'page-editUser',
+  templateUrl: 'editUser.html'
 })
-export class UserPage {
+export class EditUserPage {
   name: string;
   age: number;
   phone: string;
@@ -18,16 +15,16 @@ export class UserPage {
   os: number;
   va: number;
 
-  constructor(public navCtrl: NavController, private storage: Storage, private location: PlatformLocation) {
-    this.getData();
+  constructor(public navCtrl: NavController, private storage: Storage) {
   }
   ngOnInit() {
-    console.log("here in user");
+    console.log("here");
     if(this.getData() == false){
       this.setInitData();
     }
   }
   setInitData(){
+
     console.log("set init data");
     this.storage.set('name', 'Arjun Gupta');
     this.storage.set('age', '21');
@@ -36,8 +33,19 @@ export class UserPage {
     this.storage.set('od', '1.1');
     this.storage.set('os', '1.2');
     this.storage.set('va', '1.0');
-  }
 
+  }
+  setData(){
+    this.storage.set('name', this.name);
+    this.storage.set('age', this.age);
+    this.storage.set('phone', this.phone);
+    this.storage.set('address', this.address);
+    this.storage.set('od', this.od);
+    this.storage.set('os', this.os);
+    this.storage.set('va', this.va);
+    // this.navCtrl.pop();
+    this.navCtrl.setRoot(HomePage);
+  }
   getData():boolean{
     this.storage.get('name').then((val) => {
       if(val==null){
@@ -84,10 +92,7 @@ export class UserPage {
     return true;
   }
 
-  editUser(){
-    this.navCtrl.push(EditUserPage, {
-    })
-  }
+
 
 
 }
