@@ -1,5 +1,8 @@
 <ion-header>
   <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
       News
     </ion-title>
@@ -11,7 +14,7 @@
   <ion-grid>
     <ion-row>
       <ion-col col-12 col-md-6 *ngFor="let item of items">
-        <ion-card >
+        <ion-card (click)="viewItem(item.data)">
           <ion-card-header>
             <ion-item>
               <h2>{{item.data.title}}</h2>
@@ -19,7 +22,6 @@
                 <ion-icon name="thumbs-up">{{item.data.score}}</ion-icon>&nbsp;&nbsp;
                 <ion-icon name="chatboxes">{{item.data.num_comments}}</ion-icon>
               </p>
-              <button ion-button clear item-right (click)="viewItem(item.data)">View</button>
               <ion-thumbnail *ngIf="item.data.thumbnail" item-end>
                 <img src="{{item.data.thumbnail}}" width="50px" height="50px" alt="">
               </ion-thumbnail>

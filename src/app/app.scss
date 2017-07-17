@@ -34,4 +34,15 @@
 }
 ion-card{
   background-color: green;
+  margin-bottom: 1px !important;
+  margin-top: 1px !important;
+}
+
+.app{
+  .menu-inner{
+  width: calc(100% - 70%) !important;
+  }
+  .ion-content{
+    transform: translate3d(calc(100% - 70%), 0px, 0px) !important;
+  }
 }
