@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import {Data} from '../../app/services/data.service';
 import {OptometristService} from '../../app/services/optometrist.service';
 import {SearchResultPage} from './searchResult';
+import {OptometristPage} from '../optometrist/optometrist';
+
 
 @Component({
   selector: 'search',
@@ -31,7 +33,7 @@ export class SearchPage {
 
   }
   search(item){
-    this.navCtrl.push(SearchResultPage, {
+    this.navCtrl.push(OptometristPage, {
       'item': item,
     })
   }

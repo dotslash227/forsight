@@ -1,30 +1,32 @@
 .optometrist{
   #profile-bg {
     position: fixed;
+    margin-top:60px;
     left: 0;
-    top: 44px;
+    top: 0;
     width: 100%;
-    height: 150px;
-    /*    no-repeat transparent;*/
-    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/94311/bg.jpg');
+    height: 200px;
+    background-color: white;
+    background: url('/assets/icon/bg.jpg');
     background-size: 100%;
     background-position: 50% 20%;
     text-align: center;
+    box-shadow: 0 -1px 20px rgba(0,0,0,0.4);
   }
 
   #content {
     position: relative;
-    margin-top: 150px;
+    margin-top: 300px;
     background-color: white;
     box-shadow: 0 -1px 10px rgba(0,0,0,0.4);
-    padding-top: 200px;
+    padding-top: 0px;
   }
 
   #profile-info {
     position: absolute;
     top: -95px;
     width: 100%;
-    z-index: 2;
+    z-index: -1;
     text-align: center;
   }
 
@@ -48,7 +50,7 @@
     border: 1px solid #fff;
     width: 128px;
     height: 128px;
-    margin: 30px auto 0;
+    margin: 5px auto 0;
     box-shadow: 0 0 4px rgba(0,0,0,0.7);
   }
 

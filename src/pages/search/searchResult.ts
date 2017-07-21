@@ -15,6 +15,4 @@ export class SearchResultPage {
     this.item =params.get('item');
   }
 
-
-
 }
