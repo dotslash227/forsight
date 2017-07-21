@@ -33,7 +33,7 @@ export class MapPage {
   }
   ngOnInit(){
     console.log('onInit ran');
-    this.getOptometrists();
+    // this.getOptometrists();
   }
 
   getOptometrists(){
