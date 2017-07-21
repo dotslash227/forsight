@@ -21,27 +21,20 @@ export class MapPage {
               public locations: LocationsProvider,
               private optometristService: OptometristService
             ) {
-
+              this.getOptometrists();
   }
 
   ionViewDidLoad(){
-
     this.platform.ready().then(() => {
-
         let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
-
     });
-  }
-  ngOnInit(){
-    console.log('onInit ran');
-    this.getOptometrists();
   }
 
   getOptometrists(){
-    this.optometristService.getOptometrists().subscribe(response=>{
-      console.log("resp=", response);
-      this.optometrists=response;
+    this.optometristService.getOptometristsSubs().subscribe(data => {
+      this.optometrists = data;
     });
   }
+
 
 }

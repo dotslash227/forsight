@@ -17,6 +17,8 @@ export class GoogleMapsProvider {
   mapLoadedObserver: any;
   markers: any = [];
   apiKey: string;
+  optometrists: any = [];
+
 
   constructor(public connectivityService: ConnectivityProvider,
               private optometristService: OptometristService
@@ -192,13 +194,11 @@ export class GoogleMapsProvider {
 
   getOptometrists(){
 
-    this.optometristService.getOptometrists().subscribe(response=>{
-      console.log("resp=", response);
-      // console.log("response.data.children=",response[0]["name"]);
-      for (let each of response) {
+    this.optometrists=this.optometristService.getOptometrists()
+      for (let each of this.optometrists) {
         this.addMarker(Number(each["lat"]), Number(each["lon"]), "Optometrist", "assets/icon/opto.png");
       }
-    });
+
   }
 
 }

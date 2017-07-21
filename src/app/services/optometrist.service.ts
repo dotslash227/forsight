@@ -26,7 +26,11 @@ export class OptometristService {
   getOptometrists(){
     return this.optometrists;
   }
+  getOptometristsSubs(){
+    return this.http.get(this.baseUrl)
+      .map(res => res.json());
 
+  }
   filterItems(searchTerm) {
       return this.optometrists.filter((item) => {
         return item.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
