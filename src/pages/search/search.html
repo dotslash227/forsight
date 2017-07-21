@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Search
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="status">
+  <div class="background-image"></div>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
+      <ion-list>
+          <ion-item *ngFor="let item of items" (click)="search(item.title)">
+              {{item.title}}
+          </ion-item>
+      </ion-list>
+</ion-content>

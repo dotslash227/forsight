@@ -1,5 +1,10 @@
 {
   "name": "optics1",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "proxies": [{
+          "path": "/optometrist",
+          "proxyUrl": "http://127.0.0.1:8000/optometrist"
+      }]
+
 }

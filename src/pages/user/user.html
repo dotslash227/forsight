@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      User Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="buttons-components-page">
+  <div class="background-image"></div>
+
+  <ion-card>
+    <ion-card-content>
+      <img src="../assets/icon/user.png" />
+    </ion-card-content>
+
+    <ion-item>
+      <button ion-button clear item-end (click)="editUser()">Edit Profile</button>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+
+    <ion-list>
+      <ion-item>
+        Name: {{name}}
+
+      </ion-item>
+
+      <ion-item>
+        Age: {{this.age}}
+
+      </ion-item>
+
+      <ion-item>
+        Phone: {{phone}}
+
+      </ion-item>
+
+      <ion-item>
+        Address: {{address}}
+
+      </ion-item>
+
+      <ion-item>
+        OD: {{od}}
+
+      </ion-item>
+
+      <ion-item>
+        OS: {{os}}
+
+      </ion-item>
+
+      <ion-item>
+        VA: {{va}}
+
+      </ion-item>
+    </ion-list>
+
+  </ion-card>
+
+
+</ion-content>
