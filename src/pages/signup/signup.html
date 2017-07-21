@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content text-center class="login" padding="true" style="background: url(/assets/icon/opto.jpg)  center;background-size:cover;">
+
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Username</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="username"></ion-input>
+
+    </ion-item>
+
+    <p *ngIf="!isValidUsername()" style="color:red; background-color: white;">Username Already Exists!!!</p>
+
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input type="email" value="" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Re-Enter Password</ion-label>
+      <ion-input type="password" [(ngModel)]="repassword"></ion-input>
+    </ion-item>
+
+    <p *ngIf="password != repassword" style="color:red; background-color: white;">Passwords doesn't match!!!</p>
+
+    <ion-item>
+      <ion-label fixed>Name</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Age:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Phone:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Address:</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>OD:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>OS:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>VA:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="va"></ion-input>
+    </ion-item>
+
+
+
+  </ion-list>
+  <div padding>
+    <button ion-button color="primary" block>Log In</button>
+  </div>
+
+  <a href="#" style="color: blue;">Already have an account? Login.</a>
+
+</ion-content>

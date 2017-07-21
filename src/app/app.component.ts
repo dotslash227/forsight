@@ -10,6 +10,9 @@ import { MapPage } from '../pages/map/map';
 import { UserPage } from '../pages/user/user';
 import { OptometristPage } from '../pages/optometrist/optometrist';
 
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +20,7 @@ import { OptometristPage } from '../pages/optometrist/optometrist';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SignupPage;
 
   pages: Array<{title: string, component: any, icon: string}>;
 

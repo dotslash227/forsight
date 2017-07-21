@@ -4,6 +4,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+
 import { HomePage } from '../pages/home/home';
 import { NewsPage } from '../pages/news/news';
 import { DetailsPage } from '../pages/details/details';
@@ -35,6 +38,8 @@ import {OptometristService} from '../app/services/optometrist.service';
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
+    SignupPage,
     HomePage,
     ListPage,
     NewsPage,
@@ -55,6 +60,8 @@ import {OptometristService} from '../app/services/optometrist.service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
+    SignupPage,
     HomePage,
     ListPage,
     NewsPage,
