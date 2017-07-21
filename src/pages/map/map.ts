@@ -10,6 +10,7 @@ import {OptometristService} from '../../app/services/optometrist.service';
   providers: [OptometristService],
 })
 export class MapPage {
+  optometrists: any;
 
   @ViewChild('map') mapElement: ElementRef;
   @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
@@ -33,13 +34,13 @@ export class MapPage {
   }
   ngOnInit(){
     console.log('onInit ran');
-    // this.getOptometrists();
+    this.getOptometrists();
   }
 
   getOptometrists(){
     this.optometristService.getOptometrists().subscribe(response=>{
       console.log("resp=", response);
-      console.log("response.data.children=",response[0]["name"])
+      this.optometrists=response;
     });
   }
 

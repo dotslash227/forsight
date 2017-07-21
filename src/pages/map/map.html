@@ -21,16 +21,17 @@
         <ion-card>
           <ion-card-header>
             <ion-list>
-              <button ion-item>
-                Item1
-              </button>
-              <button ion-item>
-                Item2
-              </button>
-              <button ion-item>
-                Item3
-              </button>
-
+              <ion-list-header>
+                <h1>Optometrists Near Me</h1>
+              </ion-list-header>
+              <ion-item-group *ngFor="let each of optometrists">
+                <ion-item>
+                  <h2>{{ each.name }}</h2>
+                  <p *ngIf="each.workplaceName">• {{ each.workplaceName }}</p>
+                  <p *ngIf="each.qualification">• {{ each.qualification }} </p>
+                  <p *ngIf="each.workExperience">• {{ each.workExperience }}</p>
+                </ion-item>
+              </ion-item-group>
             </ion-list>
           </ion-card-header>
         </ion-card>

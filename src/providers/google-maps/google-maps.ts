@@ -103,7 +103,13 @@ export class GoogleMapsProvider {
 
         this.map = new google.maps.Map(this.mapElement, mapOptions);
         this.getOptometrists();
-        this.addMarker(position.coords.latitude, position.coords.longitude);
+        var image = {
+          url: "../assets/icon/person.png",
+          size: new google.maps.Size(20, 32),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 32)
+        };
+        this.addMarker(position.coords.latitude, position.coords.longitude, "You are here", "assets/icon/person.png");
 
         resolve(true);
 
@@ -162,7 +168,7 @@ export class GoogleMapsProvider {
 
   }
 
-  addMarker(lat: number, lng: number): void {
+  addMarker(lat: number, lng: number, title: string, icon: string): void {
 
     let latLng = new google.maps.LatLng(lat, lng);
 
@@ -170,19 +176,27 @@ export class GoogleMapsProvider {
       map: this.map,
       animation: google.maps.Animation.DROP,
       position: latLng,
-      title: 'You are here',
+      title: title,
+      options: {
+        icon: {
+            url: icon,
+            scaledSize: new google.maps.Size(34, 34),
+            origin: new google.maps.Point(0,0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+        }
+      }
     });
-
     this.markers.push(marker);
 
   }
 
   getOptometrists(){
+
     this.optometristService.getOptometrists().subscribe(response=>{
       console.log("resp=", response);
       // console.log("response.data.children=",response[0]["name"]);
       for (let each of response) {
-        this.addMarker(Number(each["lat"]), Number(each["lon"]));
+        this.addMarker(Number(each["lat"]), Number(each["lon"]), "Optometrist", "assets/icon/opto.png");
       }
     });
   }
