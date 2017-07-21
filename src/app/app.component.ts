@@ -8,6 +8,8 @@ import { NewsPage } from '../pages/news/news';
 import { SearchPage } from '../pages/search/search';
 import { MapPage } from '../pages/map/map';
 import { UserPage } from '../pages/user/user';
+import { OptometristPage } from '../pages/optometrist/optometrist';
+
 
 @Component({
   templateUrl: 'app.html'

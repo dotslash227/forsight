@@ -9,6 +9,8 @@ import { NewsPage } from '../pages/news/news';
 import { DetailsPage } from '../pages/details/details';
 import { UserPage } from '../pages/user/user';
 import { EditUserPage } from '../pages/user/editUser';
+import { OptometristPage } from '../pages/optometrist/optometrist';
+
 
 import { SearchPage } from '../pages/search/search';
 import { SearchResultPage } from '../pages/search/searchResult';
@@ -39,6 +41,7 @@ import {OptometristService} from '../app/services/optometrist.service';
     DetailsPage,
     UserPage,
     EditUserPage,
+    OptometristPage,
     SearchPage,
     SearchResultPage,
     MapPage,
@@ -58,6 +61,7 @@ import {OptometristService} from '../app/services/optometrist.service';
     DetailsPage,
     UserPage,
     EditUserPage,
+    OptometristPage,
     SearchPage,
     SearchResultPage,
     MapPage,
