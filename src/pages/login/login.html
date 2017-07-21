@@ -19,9 +19,9 @@
     </ion-item>
   </ion-list>
   <div padding>
-    <button ion-button color="primary" block>Log In</button>
+    <button ion-button color="primary" block (click)="login()">Log In</button>
   </div>
 
-  <a href="#" style="color: blue;">Dont have an account? Signup.</a>
+  <a href="#" style="color: blue;" (click)="gotoSignup()" >Dont have an account? Signup.</a>
 
 </ion-content>

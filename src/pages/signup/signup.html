@@ -66,9 +66,9 @@
 
   </ion-list>
   <div padding>
-    <button ion-button color="primary" block>Log In</button>
+    <button ion-button color="primary" block (click)="signup()">Signup</button>
   </div>
 
-  <a href="#" style="color: blue;">Already have an account? Login.</a>
+  <a href="#" style="color: blue;" (click)="gotoLogin()">Already have an account? Login.</a>
 
 </ion-content>
