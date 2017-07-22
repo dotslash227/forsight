@@ -34,6 +34,8 @@ export class MyApp {
       { title: 'Search', component: SearchPage, icon: 'ios-search-outline',  },
       { title: 'NearMe', component: MapPage, icon: 'ios-locate-outline',  },
       { title: 'Profile', component: UserPage, icon: 'md-person',  },
+      { title: 'Logout', component: LoginPage, icon: 'md-log-out',  },
+
     ];
 
   }

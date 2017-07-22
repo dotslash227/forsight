@@ -38,14 +38,14 @@ export class LoginPage {
       'X-CSRFToken': this.getCookie('csrftoken')
     });
     let options = new RequestOptions({ headers: headers });
-    
+
     return this.http.post(this.baseUrl, { username: this.username, password: this.password }, options)
       .map(res => res.json())
       .subscribe(data => {
         console.log("login data=>", data);
         if (data["error"] == false) {
           this.errorMsg = null;
-          this.navCtrl.push(HomePage, {
+          this.navCtrl.setRoot(HomePage, {
             'username': this.username,
           })
         }
