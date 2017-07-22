@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import {NewsPage} from '../news/news';
 import {UserPage} from '../user/user';
 import {SearchPage} from '../search/search';
-
 import {MapPage} from '../map/map';
 
 @Component({

@@ -24,7 +24,7 @@ export class UserPage {
   ngOnInit() {
     console.log("here in user");
     if(this.getData() == false){
-      this.setInitData();
+      // this.setInitData();
     }
   }
   setInitData(){

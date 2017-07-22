@@ -4,7 +4,7 @@ import { SignupPage } from '../signup/signup';
 import {Http, URLSearchParams, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/Rx';
 import {HomePage} from '../home/home';
-
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-login',
@@ -16,7 +16,7 @@ export class LoginPage {
   username: string;
   password: string;
   errorMsg: string;
-  constructor(public navCtrl: NavController, private http: Http) {
+  constructor(public navCtrl: NavController, private http: Http, public storage: Storage,) {
     this.baseUrl = '/login';
     this.errorMsg = null;
   }
@@ -31,7 +31,19 @@ export class LoginPage {
     if (parts.length == 2)
       return parts.pop().split(";").shift();
   }
+  setData(data, username, password){
+    this.storage.set('username', username);
+    this.storage.set('email', data.email);
+    this.storage.set('password', password);
 
+    this.storage.set('name', data.name);
+    this.storage.set('age', Number(data.age));
+    this.storage.set('phone', Number(data.phone));
+    this.storage.set('address', data.address);
+    this.storage.set('od', Number(data.od));
+    this.storage.set('os', Number(data.os));
+    this.storage.set('va', Number(data.va));
+  }
   login() {
     let headers = new Headers({
       'Content-Type': 'application/json',
@@ -45,8 +57,9 @@ export class LoginPage {
         console.log("login data=>", data);
         if (data["error"] == false) {
           this.errorMsg = null;
+          this.setData(data, this.username, this.password);
           this.navCtrl.setRoot(HomePage, {
-            'username': this.username,
+
           })
         }
         else {

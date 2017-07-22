@@ -12,6 +12,14 @@
       "proxyUrl": "http://127.0.0.1:8000/signup"
     },
     {
+      "path": "/logout",
+      "proxyUrl": "http://127.0.0.1:8000/logout"
+    },
+    {
+      "path": "/editUser",
+      "proxyUrl": "http://127.0.0.1:8000/editUser"
+    },
+    {
       "path": "/optometrist",
       "proxyUrl": "http://127.0.0.1:8000/optometrist"
     }
