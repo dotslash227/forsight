@@ -28,11 +28,11 @@ export class SignupPage {
 
 
   constructor(public navCtrl: NavController, private http: Http) {
-    this.baseUrl = '/signup';
+    this.baseUrl = 'http://oapp.delhinerds.com/signup';
     this.errorMsg = null;
   }
   isValidUsername() {
-    return false;
+    return true;
   }
   isValidPassword() {
     return false;

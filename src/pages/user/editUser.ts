@@ -54,7 +54,7 @@ export class EditUserPage {
     });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post('/editUser',
+    return this.http.post('http://oapp.delhinerds.com/editUser',
       {
         username: this.username,
         email: this.email,

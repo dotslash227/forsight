@@ -53,7 +53,7 @@ export class MyApp {
   openPage(page) {
     if(page.component == LoginPage){
       console.log("logout called");
-      return this.http.get('/logout')
+      return this.http.get('http://oapp.delhinerds.com/logout')
         .map(res => res.json())
         .subscribe(data => {
           console.log("logout data=>", data);
