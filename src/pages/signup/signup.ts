@@ -4,6 +4,7 @@ import {LoginPage} from '../login/login';
 import {Http, URLSearchParams, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/Rx';
 import {HomePage} from '../home/home';
+import {Camera} from 'ionic-native';
 
 @Component({
   selector: 'page-signup',
@@ -22,8 +23,9 @@ export class SignupPage {
   od: number;
   os: number;
   va: number;
-
+  photo:any;
   errorMsg: string;
+
 
   constructor(public navCtrl: NavController, private http: Http) {
     this.baseUrl = '/signup';
@@ -46,6 +48,19 @@ export class SignupPage {
     if (parts.length == 2)
       return parts.pop().split(";").shift();
   }
+  pickPicture() {
+    Camera.getPicture({
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+      mediaType: Camera.MediaType.PICTURE
+    }).then((imageData) => {
+      // imageData is a base64 encoded string
+      this.photo = "data:image/jpeg;base64," + imageData;
+      console.log("image=",this.photo );
+    }, (err) => {
+      console.log(err);
+    });
+  }
 
   signup() {
     let headers = new Headers({
@@ -60,18 +75,19 @@ export class SignupPage {
         email: this.email,
         password: this.password,
         name: this.name,
-        age: String(this.age),
+        age: this.age,
         phone: this.phone,
         address: this.address,
-        os: String(this.os),
-        od: String(this.od),
-        va: String(this.va)
+        od: this.od,
+        os: this.os,
+        va: this.va,
+        photo: this.photo,
       }, options)
       .map(res => res.json())
       .subscribe(data => {
         console.log("signup data=>", data);
         if (data["error"] == false) {
-          this.errorMsg = null;
+          this.errorMsg = data["msg"];
           this.navCtrl.setRoot(HomePage, {
             'username': this.username,
           })
