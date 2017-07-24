@@ -41,3 +41,4 @@ ionic cordova plugin add cordova-sqlite-storage
 npm install --save @ionic/storage
 
 ionic cordova plugin add cordova-plugin-camera
+cordova plugin add cordova-plugin-whitelist

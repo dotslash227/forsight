@@ -5,25 +5,24 @@
   "proxies": [
     {
       "path": "/login",
-      "proxyUrl": "http://127.0.0.1:8000/login"
+      "proxyUrl": "http://192.178.7.5:8000/login"
     },
     {
       "path": "/signup",
-      "proxyUrl": "http://127.0.0.1:8000/signup"
+      "proxyUrl": "http://192.178.7.5:8000/signup"
     },
     {
       "path": "/logout",
-      "proxyUrl": "http://127.0.0.1:8000/logout"
+      "proxyUrl": "http://192.178.7.5:8000/logout"
     },
     {
       "path": "/editUser",
-      "proxyUrl": "http://127.0.0.1:8000/editUser"
+      "proxyUrl": "http://192.178.7.5:8000/editUser"
     },
     {
       "path": "/optometrist",
-      "proxyUrl": "http://127.0.0.1:8000/optometrist"
+      "proxyUrl": "http://192.178.7.5:8000/optometrist"
     }
-
 
   ]
 
