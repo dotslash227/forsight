@@ -106,7 +106,7 @@ export class GoogleMapsProvider {
         this.map = new google.maps.Map(this.mapElement, mapOptions);
         this.getOptometrists();
         var image = {
-          url: "../assets/icon/person.png",
+          url: "assets/icon/person.png",
           size: new google.maps.Size(20, 32),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(0, 32)

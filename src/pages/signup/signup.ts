@@ -28,11 +28,11 @@ export class SignupPage {
 
 
   constructor(public navCtrl: NavController, private http: Http) {
-    this.baseUrl = '/signup';
+    this.baseUrl = '/signup/';
     this.errorMsg = null;
   }
   isValidUsername() {
-    return false;
+    return true;
   }
   isValidPassword() {
     return false;
@@ -88,8 +88,7 @@ export class SignupPage {
         console.log("signup data=>", data);
         if (data["error"] == false) {
           this.errorMsg = data["msg"];
-          this.navCtrl.setRoot(HomePage, {
-            'username': this.username,
+          this.navCtrl.setRoot(LoginPage, {
           })
         }
         else {

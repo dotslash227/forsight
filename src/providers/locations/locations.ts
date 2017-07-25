@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 /*
   Generated class for the LocationsProvider provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  See http://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular DI.
 */
 @Injectable()

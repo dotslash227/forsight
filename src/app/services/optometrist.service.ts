@@ -11,7 +11,7 @@ export class OptometristService {
 
   constructor(http: Http) {
     this.http = http;
-    this.baseUrl = '/optometrist';
+    this.baseUrl = '/optometrist/';
     this.getOptometristsInit();
   }
 

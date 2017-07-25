@@ -17,7 +17,7 @@ export class LoginPage {
   password: string;
   errorMsg: string;
   constructor(public navCtrl: NavController, private http: Http, public storage: Storage,) {
-    this.baseUrl = '/login';
+    this.baseUrl = '/login/';
     this.errorMsg = null;
   }
   gotoSignup() {
