@@ -11,6 +11,7 @@ import {OptometristService} from '../../app/services/optometrist.service';
 })
 export class MapPage {
   optometrists: any;
+  optometristsByDistance: any;
 
   @ViewChild('map') mapElement: ElementRef;
   @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
@@ -34,6 +35,10 @@ export class MapPage {
     this.optometristService.getOptometristsSubs().subscribe(data => {
       this.optometrists = data;
     });
+
+    this.optometristsByDistance = this.optometristService.getOptometristsNearMe();
+    console.log("optometristsByDistance maps.ts", this.optometristsByDistance);
+
   }
 
 

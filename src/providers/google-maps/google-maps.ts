@@ -24,7 +24,8 @@ export class GoogleMapsProvider {
               private optometristService: OptometristService
               )
               {
-
+                this.initMap();
+                this.enableMap();
               }
 
   init(mapElement: any, pleaseConnect: any): Promise<any> {

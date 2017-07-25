@@ -42,3 +42,4 @@ npm install --save @ionic/storage
 
 ionic cordova plugin add cordova-plugin-camera
 cordova plugin add cordova-plugin-whitelist
+ionic plugin add cordova-plugin-geolocation --save
