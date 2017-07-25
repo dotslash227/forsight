@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
-import {Http, URLSearchParams, RequestOptions, Headers} from '@angular/http';
+import {Http, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/Rx';
 import {HomePage} from '../home/home';
 import { Storage } from '@ionic/storage';

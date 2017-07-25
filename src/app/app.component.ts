@@ -9,11 +9,10 @@ import { SearchPage } from '../pages/search/search';
 import { SearchBySpecPage } from '../pages/search/searchBySpec';
 import { MapPage } from '../pages/map/map';
 import { UserPage } from '../pages/user/user';
-import { OptometristPage } from '../pages/optometrist/optometrist';
 
 import { LoginPage } from '../pages/login/login';
-import { SignupPage } from '../pages/signup/signup';
-import {Http, URLSearchParams, RequestOptions, Headers} from '@angular/http';
+// import { SignupPage } from '../pages/signup/signup';
+import {Http} from '@angular/http';
 
 
 @Component({

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {LoginPage} from '../login/login';
-import {Http, URLSearchParams, RequestOptions, Headers} from '@angular/http';
+import {Http, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/Rx';
-import {HomePage} from '../home/home';
+
 import {Camera} from 'ionic-native';
 
 @Component({

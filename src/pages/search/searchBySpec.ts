@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {OptometristService} from '../../app/services/optometrist.service';
-import {SearchResultPage} from './searchResult';
 import {OptometristPage} from '../optometrist/optometrist';
 
 

@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ConnectivityProvider } from '../connectivity/connectivity';
 import { Geolocation } from 'ionic-native';
 import {OptometristService} from '../../app/services/optometrist.service';
@@ -106,12 +106,12 @@ export class GoogleMapsProvider {
 
         this.map = new google.maps.Map(this.mapElement, mapOptions);
         this.getOptometrists();
-        var image = {
-          url: "assets/icon/person.png",
-          size: new google.maps.Size(20, 32),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(0, 32)
-        };
+        // var image = {
+        //   url: "assets/icon/person.png",
+        //   size: new google.maps.Size(20, 32),
+        //   origin: new google.maps.Point(0, 0),
+        //   anchor: new google.maps.Point(0, 32)
+        // };
         this.addMarker(position.coords.latitude, position.coords.longitude, "You are here", "assets/icon/person.png");
 
         resolve(true);

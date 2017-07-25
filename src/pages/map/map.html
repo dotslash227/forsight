@@ -11,30 +11,49 @@
 </ion-header>
 
 <ion-content>
-  <div #pleaseConnect id="please-connect">
+  <!-- <div #pleaseConnect id="please-connect">
     <p>Please connect to the Internet...</p>
   </div>
-  <div #map id="map"></div>
+  <div #map id="map"></div> -->
   <ion-grid>
     <ion-row>
       <ion-col col-12>
         <ion-card>
-          <ion-card-header>
-            <ion-list>
+            <!-- <ion-list> -->
               <ion-list-header>
                 <h1>Optometrists Near Me</h1>
               </ion-list-header>
-              <ion-item-group *ngFor="let each of optometrists">
+              <ion-list *ngFor="let each of optometristsByDistance" (click)="search(each.optometrist)">
+                <ion-list-header>
+                  <h2>{{ each.optometrist.name }}</h2>
+                  <br>
+                  <p>From your current location:</p>
+                  <p *ngIf="each.distanceText">Distance= {{ each.distanceText }}</p>
+                  <p *ngIf="each.durationText">Duration= {{ each.durationText }}</p>
+                  <br>
+                  <p *ngIf="each.optometrist.workplaceName">• {{ each.optometrist.workplaceName }}</p>
+                  <p *ngIf="each.optometrist.qualification">• {{ each.optometrist.qualification }} </p>
+                  <p *ngIf="each.optometrist.workExperience">• {{ each.optometrist.workExperience }}</p>
+                </ion-list-header>
+              </ion-list>
+
+              <!-- <ion-item-group *ngFor="let each of optometristsByDistance" (click)="search(each.optometrist)">
                 <ion-item>
-                  <h2>{{ each.name }}</h2>
-                  <p *ngIf="each.workplaceName">• {{ each.workplaceName }}</p>
-                  <p *ngIf="each.qualification">• {{ each.qualification }} </p>
-                  <p *ngIf="each.workExperience">• {{ each.workExperience }}</p>
+                  <h2>{{ each.optometrist.name }}</h2>
+                  <p>From your current location:</p>
+                  <p *ngIf="each.distanceText">Distance= {{ each.distanceText }}</p>
+                  <p *ngIf="each.durationText">Duration= {{ each.durationText }}</p>
+
+                  <p *ngIf="each.optometrist.workplaceName">• {{ each.optometrist.workplaceName }}</p>
+                  <p *ngIf="each.optometrist.qualification">• {{ each.optometrist.qualification }} </p>
+                  <p *ngIf="each.optometrist.workExperience">• {{ each.optometrist.workExperience }}</p>
                 </ion-item>
-              </ion-item-group>
-            </ion-list>
-          </ion-card-header>
-        </ion-card>
+              </ion-item-group> -->
+            <!-- </ion-list> -->
+          </ion-card>
+
+
+
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {EditUserPage} from './editUser';
-import {HomePage} from '../home/home';
-import { PlatformLocation } from '@angular/common';
 
 @Component({
   selector: 'page-user',
@@ -18,7 +16,7 @@ export class UserPage {
   os: number;
   va: number;
 
-  constructor(public navCtrl: NavController, private storage: Storage, private location: PlatformLocation) {
+  constructor(public navCtrl: NavController, private storage: Storage) {
     this.getData();
   }
   ngOnInit() {

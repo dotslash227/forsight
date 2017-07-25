@@ -22,6 +22,14 @@
     {
       "path": "/optometrist",
       "proxyUrl": "http://192.178.7.5:8000/optometrist"
+    },
+    {
+      "path": "/distance",
+      "proxyUrl": "http://192.178.7.5:8000/distance"
+    },
+    {
+      "path": "/media",
+      "proxyUrl": "http://192.178.7.5:8000/media"
     }
 
   ]
