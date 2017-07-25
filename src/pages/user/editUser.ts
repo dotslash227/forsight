@@ -20,9 +20,13 @@ export class EditUserPage {
   os: number;
   va: number;
 
+  baseUrl: string;
+
+
   errorMsg: string;
 
   constructor(public navCtrl: NavController, private storage: Storage, public http: Http) {
+    this.baseUrl = 'http://oapp.delhinerds.com/editUser/';
     this.getData();
     this.errorMsg = null;
   }
@@ -54,7 +58,7 @@ export class EditUserPage {
     });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post('/editUser/',
+    return this.http.post(this.baseUrl,
       {
         username: this.username,
         email: this.email,

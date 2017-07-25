@@ -23,11 +23,12 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
-
+  baseUrl: string;
   pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private http: Http) {
     this.initializeApp();
+    this.baseUrl = 'http://oapp.delhinerds.com/logout/';
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -55,7 +56,7 @@ export class MyApp {
   openPage(page) {
     if(page.component == LoginPage){
       console.log("logout called");
-      return this.http.get('/logout/')
+      return this.http.get(this.baseUrl)
         .map(res => res.json())
         .subscribe(data => {
           console.log("logout data=>", data);
