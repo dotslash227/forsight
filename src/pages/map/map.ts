@@ -29,7 +29,7 @@ export class MapPage {
     private optometristService: OptometristService,
     private http: Http,
   ) {
-    this.baseUrl2 = '/distance/';
+    this.baseUrl2 = 'http://oapp.delhinerds.com/distance/';
 
     this.getOptometrists();
   }
