@@ -8,37 +8,28 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding class="buttons-components-page">
-  <div class="background-image"></div>
-
+<ion-content padding class="buttons-components-page" style="background: url(assets/icon/opto.jpg)  center;background-size:cover;">
+  <!-- <div class="background-image"></div> -->
   <ion-card>
     <ion-item>
-      <img  src={{item.preview.images[0].source.url}} />
+      <img src={{item.photo}} />
     </ion-item>
-
     <ion-card-content>
       <ion-card-title>
         {{item.title}}
       </ion-card-title>
       <ion-list>
-        <ion-item><ion-icon name="person" item-left></ion-icon>
-          Author
-          <ion-note item-right>{{item.author}}</ion-note>
-        </ion-item>
-
-        <ion-item><ion-icon name="thumbs-up" item-left></ion-icon>
-          Score
-          <ion-note item-right>{{item.score}}</ion-note>
-        </ion-item>
-
-        <ion-item><ion-icon name="chatboxes" item-left></ion-icon>
-
-          Score
-          <ion-note item-right>{{item.num_comments}}</ion-note>
+        <ion-item text-wrap>
+          Author:
+          <ion-note>{{item.author}}</ion-note>
+          <br>
+          Subtitle:
+          {{item.subtitle}}
+          <br>
+          Content:
+          {{item.content}}
         </ion-item>
       </ion-list>
-      <a ion-button target="_blank" href="http://reddit.com{{item.permalink}}">View on Reddit</a>
     </ion-card-content>
   </ion-card>
 </ion-content>

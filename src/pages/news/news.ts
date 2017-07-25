@@ -3,45 +3,25 @@ import { NavController } from 'ionic-angular';
 import {NewsService} from '../../app/services/news.service';
 import {DetailsPage} from '../details/details';
 
-
 @Component({
   selector: 'news',
   templateUrl: 'news.html',
-  // providers: [RedditService],
   providers: [NewsService],
 })
 export class NewsPage {
   items: any;
-  category: any;
-  limit: any;
 
   constructor(public navCtrl: NavController, private newsService: NewsService) {
-    this.getDefault();
-  }
-  getDefault(){
-    if(localStorage.getItem('category')!= null){
-      this.category = localStorage.getItem('category');
-    }
-    else{
-      this.category = 'sports';
-
-    }
-    if(localStorage.getItem('limit')!= null){
-      this.limit = localStorage.getItem('limit');
-    }
-    else{
-      this.limit = 10;
-    }
   }
 
   ngOnInit(){
     console.log('onInit ran');
-    this.getPosts(this.category, this.limit);
+    this.getPosts();
   }
-  getPosts(category, limit){
-    this.newsService.getPosts(category, limit).subscribe(response=>{
-      console.log(response);
-      this.items=response.data.children;
+  getPosts(){
+    this.newsService.getPosts().subscribe(response=>{
+      console.log("news response=", response);
+      this.items=response;
 
     });
   }
@@ -50,10 +30,7 @@ export class NewsPage {
       'item': item,
     })
   }
-  changeCategory(){
-    this.getPosts(this.category, this.limit);
 
-  }
 
 
 

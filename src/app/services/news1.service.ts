@@ -3,15 +3,15 @@ import {Http} from '@angular/http';
 import 'rxjs/Rx';
 
 @Injectable()
-export class NewsService{
+export class NewsService1{
   http: any;
   baseUrl: string;
   constructor(http: Http){
     this.http = http;
-    this.baseUrl = '/news/';
+    this.baseUrl = 'http://www.reddit.com/r';
   }
-  getPosts(){
-    return this.http.get(this.baseUrl)
+  getPosts(category, limit){
+    return this.http.get(this.baseUrl+'/'+category+ '/top.json?limit='+limit)
                .map(res=>res.json());
   }
 

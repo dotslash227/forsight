@@ -30,6 +30,10 @@
     {
       "path": "/media",
       "proxyUrl": "http://192.178.7.5:8000/media"
+    },
+    {
+      "path": "/news",
+      "proxyUrl": "http://192.178.7.5:8000/news"
     }
 
   ]
