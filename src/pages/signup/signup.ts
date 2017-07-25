@@ -38,8 +38,7 @@ export class SignupPage {
     return false;
   }
   gotoLogin() {
-    this.navCtrl.push(LoginPage, {
-    })
+    this.navCtrl.setRoot(LoginPage)
   }
 
   getCookie(name) {

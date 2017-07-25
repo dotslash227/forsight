@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import {NewsPage} from '../news/news';
 import {UserPage} from '../user/user';
 import {SearchPage} from '../search/search';
+import {SearchBySpecPage} from '../search/searchBySpec';
 import {MapPage} from '../map/map';
 
 @Component({
@@ -22,8 +23,11 @@ export class HomePage {
   nearMe(){
     this.navCtrl.push(MapPage)
   }
-  searchOpto(){
+  searchOptoByName(){
     this.navCtrl.push(SearchPage)
+  }
+  searchOptoBySpec(){
+    this.navCtrl.push(SearchBySpecPage)
   }
 
 }

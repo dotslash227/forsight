@@ -6,10 +6,11 @@ import {OptometristPage} from '../optometrist/optometrist';
 
 
 @Component({
-  selector: 'search',
-  templateUrl: 'search.html'
+  selector: 'searchSpec',
+  templateUrl: 'searchBySpec.html'
 })
-export class SearchPage {
+
+export class SearchBySpecPage {
 
   searchTerm: string = '';
   items: any;
@@ -22,7 +23,7 @@ export class SearchPage {
   }
   setFilteredItems() {
     if (this.searchTerm != ""){
-        this.items = this.optometristService.filterItemsByName(this.searchTerm);
+        this.items = this.optometristService.filterItemsBySpec(this.searchTerm);
     }
     else{
       this.items=null;

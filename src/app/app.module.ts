@@ -16,6 +16,8 @@ import { OptometristPage } from '../pages/optometrist/optometrist';
 
 
 import { SearchPage } from '../pages/search/search';
+import { SearchBySpecPage } from '../pages/search/searchBySpec';
+
 import { SearchResultPage } from '../pages/search/searchResult';
 
 import { MapPage } from '../pages/map/map';
@@ -48,6 +50,7 @@ import {OptometristService} from '../app/services/optometrist.service';
     EditUserPage,
     OptometristPage,
     SearchPage,
+    SearchBySpecPage,
     SearchResultPage,
     MapPage,
   ],
@@ -70,6 +73,7 @@ import {OptometristService} from '../app/services/optometrist.service';
     EditUserPage,
     OptometristPage,
     SearchPage,
+    SearchBySpecPage,
     SearchResultPage,
     MapPage,
   ],

@@ -31,11 +31,17 @@ export class OptometristService {
       .map(res => res.json());
 
   }
-  filterItems(searchTerm) {
+  filterItemsByName(searchTerm) {
+    console.log("optometrists=", this.optometrists)
       return this.optometrists.filter((item) => {
         return item.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
       });
   }
-
+  filterItemsBySpec(searchTerm) {
+    console.log("optometrists=", this.optometrists)
+      return this.optometrists.filter((item) => {
+        return item.specialisation.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+      });
+  }
 
 }

@@ -4,7 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Search By Name
+      Search By Specialisation
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -16,7 +16,7 @@
   <ion-card>
     <ion-list *ngFor="let item of items" (click)="search(item)">
       <ion-list-header>
-        {{item.name}}
+        {{item.specialisation}}
       </ion-list-header>
     </ion-list>
   </ion-card>

@@ -1,8 +1,18 @@
 .home{
   h1 {
-    font-size: 20px; //Preferred size here
+    font-size: 15px; //Preferred size here
   }
   ion-icon{
-    font-size: 70px; //Preferred size here
+    font-size: 30px; //Preferred size here
   }
+  ion-card-header{
+    padding: 1px;
+  }
+  .item-md {
+    padding-left: 2px;
+  }
+  .item-md.item-block .item-inner{
+    padding-right: 3px;
+  }
+
 }

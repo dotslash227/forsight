@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { NewsPage } from '../pages/news/news';
 import { SearchPage } from '../pages/search/search';
+import { SearchBySpecPage } from '../pages/search/searchBySpec';
 import { MapPage } from '../pages/map/map';
 import { UserPage } from '../pages/user/user';
 import { OptometristPage } from '../pages/optometrist/optometrist';
@@ -32,7 +33,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'md-home',  },
       { title: 'News', component: NewsPage, icon: 'md-list-box', },
-      { title: 'Search', component: SearchPage, icon: 'ios-search-outline',  },
+      { title: 'Name', component: SearchPage, icon: 'ios-search-outline',  },
+      { title: 'Specialisation', component: SearchBySpecPage, icon: 'ios-eye-outline',  },
       { title: 'NearMe', component: MapPage, icon: 'ios-locate-outline',  },
       { title: 'Profile', component: UserPage, icon: 'md-person',  },
       { title: 'Logout', component: LoginPage, icon: 'md-log-out',  },
@@ -61,6 +63,12 @@ export class MyApp {
         }, error => {
           console.log(error);
         });
+    }
+    else if(page.component == HomePage){
+      this.nav.setRoot(page.component);
+    }
+    else{
+      this.nav.push(page.component);
     }
   }
 }

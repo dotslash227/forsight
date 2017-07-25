@@ -21,8 +21,8 @@ export class LoginPage {
     this.errorMsg = null;
   }
   gotoSignup() {
-    this.navCtrl.push(SignupPage, {
-    })
+    this.navCtrl.setRoot(SignupPage);
+    
   }
 
   getCookie(name) {
