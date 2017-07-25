@@ -1,5 +1,28 @@
 {
   "name": "optics1",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/login",
+      "proxyUrl": "http://192.178.7.5:8000/login"
+    },
+    {
+      "path": "/signup",
+      "proxyUrl": "http://192.178.7.5:8000/signup"
+    },
+    {
+      "path": "/logout",
+      "proxyUrl": "http://192.178.7.5:8000/logout"
+    },
+    {
+      "path": "/editUser",
+      "proxyUrl": "http://192.178.7.5:8000/editUser"
+    },
+    {
+      "path": "/optometrist",
+      "proxyUrl": "http://192.178.7.5:8000/optometrist"
+    }
+
+  ]
 }

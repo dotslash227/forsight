@@ -26,7 +26,7 @@ export class EditUserPage {
   errorMsg: string;
 
   constructor(public navCtrl: NavController, private storage: Storage, public http: Http) {
-    this.baseUrl = 'http://oapp.delhinerds.com/editUser/';
+    this.baseUrl = '/editUser/';
     this.getData();
     this.errorMsg = null;
   }
