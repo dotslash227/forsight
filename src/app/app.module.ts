@@ -37,6 +37,13 @@ import { Network } from '@ionic-native/network';
 import {OptometristService} from '../app/services/optometrist.service';
 
 
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
+import { PhotoUploadPage } from '../pages/photoUpload/photoUpload';
+
+import {OptometristListPage} from '../pages/optometristList/optometristList';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -52,7 +59,9 @@ import {OptometristService} from '../app/services/optometrist.service';
     SearchPage,
     SearchBySpecPage,
     SearchResultPage,
+    PhotoUploadPage,
     MapPage,
+    OptometristListPage,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +85,8 @@ import {OptometristService} from '../app/services/optometrist.service';
     SearchBySpecPage,
     SearchResultPage,
     MapPage,
+    PhotoUploadPage,
+    OptometristListPage,
   ],
   providers: [
     StatusBar,
@@ -84,7 +95,10 @@ import {OptometristService} from '../app/services/optometrist.service';
     LocationsProvider, GoogleMapsProvider, ConnectivityProvider,
     Network,
     OptometristService,
-
+    Transfer,Camera,
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

@@ -9,11 +9,10 @@ import { SearchPage } from '../pages/search/search';
 import { SearchBySpecPage } from '../pages/search/searchBySpec';
 import { MapPage } from '../pages/map/map';
 import { UserPage } from '../pages/user/user';
+import {PhotoUploadPage} from '../pages/photoUpload/photoUpload';
 
 import { LoginPage } from '../pages/login/login';
-// import { SignupPage } from '../pages/signup/signup';
 import {Http} from '@angular/http';
-
 
 @Component({
   templateUrl: 'app.html'
@@ -22,12 +21,15 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
+  // rootPage: any = PhotoUploadPage;
+
+
   baseUrl: string;
   pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private http: Http) {
     this.initializeApp();
-    this.baseUrl = 'http://oapp.delhinerds.com/logout/';
+    this.baseUrl = 'http://192.178.7.5:8000/logout/';
 
     // used for an example of ngFor and navigation
     this.pages = [

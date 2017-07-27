@@ -4,8 +4,6 @@ import {LoginPage} from '../login/login';
 import {Http, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/Rx';
 
-import {Camera} from 'ionic-native';
-
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html'
@@ -23,12 +21,11 @@ export class SignupPage {
   od: number;
   os: number;
   va: number;
-  photo:any;
   errorMsg: string;
 
 
   constructor(public navCtrl: NavController, private http: Http) {
-    this.baseUrl = 'http://oapp.delhinerds.com/signup/';
+    this.baseUrl = 'http://192.178.7.5:8000/signup/';
     this.errorMsg = null;
   }
   isValidUsername() {
@@ -46,19 +43,6 @@ export class SignupPage {
     let parts = value.split("; " + name + "=");
     if (parts.length == 2)
       return parts.pop().split(";").shift();
-  }
-  pickPicture() {
-    Camera.getPicture({
-      destinationType: Camera.DestinationType.DATA_URL,
-      sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-      mediaType: Camera.MediaType.PICTURE
-    }).then((imageData) => {
-      // imageData is a base64 encoded string
-      this.photo = "data:image/jpeg;base64," + imageData;
-      console.log("image=",this.photo );
-    }, (err) => {
-      console.log(err);
-    });
   }
 
   signup() {
@@ -80,7 +64,6 @@ export class SignupPage {
         od: this.od,
         os: this.os,
         va: this.va,
-        photo: this.photo,
       }, options)
       .map(res => res.json())
       .subscribe(data => {
@@ -97,7 +80,4 @@ export class SignupPage {
         console.log(error);
       });
   }
-
-
-
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {OptometristService} from '../../app/services/optometrist.service';
-import {OptometristPage} from '../optometrist/optometrist';
+import {OptometristListPage} from '../optometristList/optometristList';
 
 
 @Component({
@@ -13,25 +13,33 @@ export class SearchBySpecPage {
 
   searchTerm: string = '';
   items: any;
+  optometrists: any;
 
-  constructor(public navCtrl: NavController,public optometristService: OptometristService) {
-
+  constructor(public navCtrl: NavController, public optometristService: OptometristService) {
+    this.getSpecialisations();
   }
   ionViewDidLoad() {
-    this.setFilteredItems();
-  }
-  setFilteredItems() {
-    if (this.searchTerm != ""){
-        this.items = this.optometristService.filterItemsBySpec(this.searchTerm);
-    }
-    else{
-      this.items=null;
-    }
+    // this.setFilteredItems();
 
   }
-  search(item){
-    this.navCtrl.push(OptometristPage, {
-      'item': item,
+  getSpecialisations() {
+    this.optometristService
+      .getSpecialisationInit()
+      .subscribe(data => {
+        this.items = data;
+        // return data;
+        console.log("items in search=", this.items);
+      });
+
+  }
+  setFilteredItems() {
+
+  }
+
+  select(item) {
+    this.optometrists = this.optometristService.filterItemsBySpec(item);
+    this.navCtrl.push(OptometristListPage, {
+      'optometrists': this.optometrists,
     })
   }
 

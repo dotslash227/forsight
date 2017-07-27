@@ -7,14 +7,20 @@ import 'rxjs/Rx';
 export class OptometristService {
   http: any;
   baseUrl: string;
+  baseUrl2: string;
+
 
   optometrists: any;
+  specialisations: any;
+
   lon: number;
   lat: number;
 
   constructor(http: Http) {
     this.http = http;
-    this.baseUrl = 'http://oapp.delhinerds.com/optometrist/';
+    this.baseUrl = 'http://192.178.7.5:8000/optometrist/';
+    this.baseUrl2 = 'http://192.178.7.5:8000/specialisation/';
+
     this.getOptometristsInit();
   }
 
@@ -41,9 +47,19 @@ export class OptometristService {
     });
   }
   filterItemsBySpec(searchTerm) {
+    console.log("this.optometrists spec service", this.optometrists);
     return this.optometrists.filter((item) => {
-      return item.specialisation.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+      console.log("iem spec ayrray = ", item.specialisation);
+      for (var i = 0; i < item.specialisation.length; i++) {
+        if (item.specialisation[i].title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+          return item;
+      }
     });
+  }
+
+  getSpecialisationInit() {
+    return this.http.get(this.baseUrl2)
+      .map(res => res.json())
   }
 
 

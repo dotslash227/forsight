@@ -11,9 +11,11 @@ export class OptometristPage {
   phone: string;
   address: string;
   item: any;
-  
+
   constructor(public navCtrl: NavController, public params: NavParams){
     this.item =params.get('item');
+    console.log("item.photo in maps.ts=", this.item.photo);
+
   }
 
 }

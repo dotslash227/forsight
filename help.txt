@@ -40,6 +40,11 @@ npm install @types/cordova-plugin-network-information --save (optional)
 ionic cordova plugin add cordova-sqlite-storage
 npm install --save @ionic/storage
 
-ionic cordova plugin add cordova-plugin-camera
 cordova plugin add cordova-plugin-whitelist
 ionic plugin add cordova-plugin-geolocation --save
+
+ionic cordova plugin add cordova-plugin-file-transfer
+npm install --save @ionic-native/transfer
+
+ionic cordova plugin add cordova-plugin-camera
+npm install --save @ionic-native/camera
