@@ -25,7 +25,7 @@ export class SignupPage {
 
 
   constructor(public navCtrl: NavController, private http: Http) {
-    this.baseUrl = 'http://192.178.7.5:8000/signup/';
+     this.baseUrl = 'http://192.178.7.5:8000/signup/';
     this.errorMsg = null;
   }
   isValidUsername() {
@@ -52,7 +52,7 @@ export class SignupPage {
     });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(this.baseUrl,
+    return this.http.post( this.baseUrl,
       {
         username: this.username,
         email: this.email,

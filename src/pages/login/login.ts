@@ -17,7 +17,7 @@ export class LoginPage {
   password: string;
   errorMsg: string;
   constructor(public navCtrl: NavController, private http: Http, public storage: Storage,) {
-    this.baseUrl = 'http://192.178.7.5:8000/login/';
+     this.baseUrl = 'http://192.178.7.5:8000/login/';
     this.errorMsg = null;
   }
   gotoSignup() {
@@ -51,7 +51,7 @@ export class LoginPage {
     });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(this.baseUrl, { username: this.username, password: this.password }, options)
+    return this.http.post( this.baseUrl, { username: this.username, password: this.password }, options)
       .map(res => res.json())
       .subscribe(data => {
         console.log("login data=>", data);

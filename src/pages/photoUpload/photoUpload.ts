@@ -17,7 +17,7 @@ export class PhotoUploadPage {
   errorMsg: string;
 
   constructor(public navCtrl: NavController, private http: Http, private transfer: Transfer, private camera: Camera) {
-    this.baseUrl = 'http://192.178.7.5:8000/photoUpload/';
+     this.baseUrl = 'http://192.178.7.5:8000/photoUpload/';
     this.errorMsg = null;
   }
   upload() {
@@ -33,7 +33,7 @@ export class PhotoUploadPage {
       }
       fileTransfer.upload(imageData,
         //  'http://localhost/ionic/upload.php',
-         this.baseUrl,
+          this.baseUrl,
           options1)
         .then((data) => {
           // success

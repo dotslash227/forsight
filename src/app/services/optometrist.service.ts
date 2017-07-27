@@ -18,14 +18,14 @@ export class OptometristService {
 
   constructor(http: Http) {
     this.http = http;
-    this.baseUrl = 'http://192.178.7.5:8000/optometrist/';
-    this.baseUrl2 = 'http://192.178.7.5:8000/specialisation/';
+     this.baseUrl = 'http://192.178.7.5:8000/optometrist/';
+     this.baseUrl2 = 'http://192.178.7.5:8000/specialisation/';
 
     this.getOptometristsInit();
   }
 
   getOptometristsInit() {
-    return this.http.get(this.baseUrl)
+    return this.http.get( this.baseUrl)
       .map(res => res.json())
       .subscribe(data => {
         this.optometrists = data;
@@ -37,7 +37,7 @@ export class OptometristService {
   }
 
   getOptometristsSubs() {
-    return this.http.get(this.baseUrl)
+    return this.http.get( this.baseUrl)
       .map(res => res.json());
 
   }
@@ -58,7 +58,7 @@ export class OptometristService {
   }
 
   getSpecialisationInit() {
-    return this.http.get(this.baseUrl2)
+    return this.http.get( this.baseUrl2)
       .map(res => res.json())
   }
 
