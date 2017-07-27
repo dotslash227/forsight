@@ -15,11 +15,12 @@
     <div id="profile-info">
       <span id="profile-description">
           <h1 style="color:black" >Specialisation:</h1>
-          <h4 *ngIf="item.specialisation">{{ item.specialisation }}</h4>
+          <h4 *ngFor="let spec of item.specialisation">
+            {{ spec.title }}
+          </h4>
 
           <h1 style="color:black" >Description:</h1>
           <h4 *ngIf="item.qualification">{{ item.qualification }}</h4>
-          <h4 *ngIf="item.specialisation">{{ item.specialisation }}</h4>
           <h4 *ngIf="item.workExperience">{{ item.workExperience }}</h4>
 
           <h1 style="color:black" >Workplace:</h1>

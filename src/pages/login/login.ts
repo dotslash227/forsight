@@ -17,7 +17,7 @@ export class LoginPage {
   password: string;
   errorMsg: string;
   constructor(public navCtrl: NavController, private http: Http, public storage: Storage,) {
-    this.baseUrl = 'http://192.178.7.5:8000/login/';
+    this.baseUrl = '/login/';
     this.errorMsg = null;
   }
   gotoSignup() {

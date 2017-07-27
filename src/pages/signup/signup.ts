@@ -25,7 +25,7 @@ export class SignupPage {
 
 
   constructor(public navCtrl: NavController, private http: Http) {
-    this.baseUrl = 'http://192.178.7.5:8000/signup/';
+    this.baseUrl = '/signup/';
     this.errorMsg = null;
   }
   isValidUsername() {
