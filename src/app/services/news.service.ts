@@ -8,7 +8,7 @@ export class NewsService{
   baseUrl: string;
   constructor(http: Http){
     this.http = http;
-     this.baseUrl = 'http://192.178.7.5:8000/news/';
+     this.baseUrl = 'http://oapp.delhinerds.com/news/';
   }
   getPosts(){
     return this.http.get( this.baseUrl)
