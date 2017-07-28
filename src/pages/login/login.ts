@@ -54,7 +54,7 @@ export class LoginPage {
     return this.http.post( this.baseUrl, { username: this.username, password: this.password }, options)
       .map(res => res.json())
       .subscribe(data => {
-        console.log("login data=>", data);
+        // console.log("login data=>", data);
         if (data["error"] == false) {
           this.errorMsg = null;
           this.setData(data, this.username, this.password);
