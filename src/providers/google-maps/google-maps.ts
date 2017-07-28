@@ -41,6 +41,8 @@ export class GoogleMapsProvider {
       if(typeof google == "undefined" || typeof google.maps == "undefined"){
 
         console.log("Google maps JavaScript needs to be loaded.");
+
+          console.log("here disableMap2");
         this.disableMap();
 
         if(this.connectivityService.isOnline()){
@@ -75,6 +77,7 @@ export class GoogleMapsProvider {
           this.enableMap();
         }
         else {
+          console.log("here disableMap2")
           this.disableMap();
         }
 
@@ -164,7 +167,7 @@ export class GoogleMapsProvider {
     document.addEventListener('offline', () => {
 
       console.log("offline");
-
+      console.log("here disableMap 3")
       this.disableMap();
 
     }, false);

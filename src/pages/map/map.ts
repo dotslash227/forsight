@@ -19,25 +19,29 @@ export class MapPage {
   lat: number;
   baseUrl2: string;
 
-  // @ViewChild('map') mapElement: ElementRef;
-  // @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
+  @ViewChild('map') mapElement: ElementRef;
+  @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
 
   constructor(public navCtrl: NavController,
-    // public maps: GoogleMapsProvider,
+    public maps: GoogleMapsProvider,
     public platform: Platform,
     public locations: LocationsProvider,
     private optometristService: OptometristService,
     private http: Http,
   ) {
-     this.baseUrl2 = 'http://oapp.delhinerds.com/distance/';
+     this.baseUrl2 = 'http://192.178.7.5:8000/distance/';
 
     this.getOptometrists();
   }
 
   ionViewDidLoad() {
-    // this.platform.ready().then(() => {
-    //     let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
-    // });
+    this.platform.ready().then(() => {
+      setTimeout(() => {
+        let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
+      // console.log(this.abc.nativeElement.innerText);
+    }, 1000);
+
+    });
   }
   getCookie(name) {
     let value = "; " + document.cookie;
@@ -70,7 +74,7 @@ export class MapPage {
 
   search(item){
     console.log("item.photo in maps.ts before=", item.photo);
-    item.photo = "" + item.photo;
+    item.photo = "http://192.178.7.5:8000" + item.photo;
     console.log("item.photo in maps.ts after=", item.photo);
 
     this.navCtrl.push(OptometristPage, {

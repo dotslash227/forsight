@@ -26,8 +26,7 @@
           Subtitle:
           {{item.subtitle}}
           <br><br>
-          Content:
-          {{item.content}}
+          Content:<p [innerHTML]="item.content"></p>
         </ion-item>
       </ion-list>
     </ion-card-content>

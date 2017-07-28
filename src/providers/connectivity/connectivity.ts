@@ -11,7 +11,7 @@ export class ConnectivityProvider {
   onDevice: boolean;
 
   constructor(public platform: Platform){
-    this.onDevice = this.platform.is('cordova');
+    this.onDevice = this.platform.is('android');
   }
 
   isOnline(): boolean {
