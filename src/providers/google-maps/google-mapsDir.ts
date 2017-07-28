@@ -32,7 +32,7 @@ export class GoogleMapsDirProvider {
     this.userLat = userLat;
     this.optoLon = optoLon;
     this.optoLat = optoLat;
-    console.log("coord in google maps dir = ", userLon, userLat, optoLon, optoLat);
+    // console.log("coord in google maps dir = ", userLon, userLat, optoLon, optoLat);
 
 
     this.mapElement = mapElement;
@@ -116,7 +116,7 @@ export class GoogleMapsDirProvider {
         this.duration = values["duration"];
         this.distance = values["distance"];
 
-        console.log("dir=", values["directions"], values["distance"], values["duration"]);
+        // console.log("dir=", values["directions"], values["distance"], values["duration"]);
         resolve(values);
       });
 
@@ -211,7 +211,7 @@ export class GoogleMapsDirProvider {
         this.duration = response.routes[0].legs[0].duration.text;
         this.distance = response.routes[0].legs[0].distance.text;
 
-        console.log(this.directions, this.duration, this.distance);
+        // console.log(this.directions, this.duration, this.distance);
         if (status === 'OK') {
           directionsDisplay.setDirections(response);
           resolve({"directions": response.routes[0].legs[0].steps,"duration": response.routes[0].legs[0].duration.text,"distance": response.routes[0].legs[0].distance.text});

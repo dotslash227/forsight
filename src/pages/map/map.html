@@ -12,7 +12,7 @@
 
 <ion-content>
   <div #pleaseConnect id="please-connect">
-    <p>Please connect to the Internet...</p>
+    <p>Please wait for the map to load.</p>
   </div>
   <div #map id="map"></div>
   <ion-grid>
@@ -27,11 +27,14 @@
                 <ion-list-header>
                   <h2>{{ each.optometrist.name }}</h2>
                   <button ion-button color="light" (click)="getDirections(each)">Get Directions On Map</button>
+                  <br>
                   <button ion-button color="light"  (click)="search(each.optometrist)">Show Optometrist Profile</button>
                   <br>
                   <p>From your current location:</p>
-                  <p *ngIf="each.distanceText">Distance= {{ each.distanceText }}</p>
-                  <p *ngIf="each.durationText">Duration= {{ each.durationText }}</p>
+                  <p *ngIf="each.distanceText">&nbsp;Distance= {{ each.distanceText }}</p>
+                  <p *ngIf="each.durationText">&nbsp;Duration= {{ each.durationText }}</p>
+                  <p *ngIf="each.optometrist.workplaceAddress">&nbsp;Address = {{ each.optometrist.workplaceAddress }}</p>
+
                   <br>
                   <p *ngIf="each.optometrist.workplaceName">• {{ each.optometrist.workplaceName }}</p>
                   <p *ngIf="each.optometrist.qualification">• {{ each.optometrist.qualification }} </p>

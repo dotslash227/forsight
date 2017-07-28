@@ -16,8 +16,8 @@ export class LoginPage {
   username: string;
   password: string;
   errorMsg: string;
-  constructor(public navCtrl: NavController, private http: Http, public storage: Storage,) {
-     = 'http://192.178.7.5:8000/login/';
+  constructor(public navCtrl: NavController, private http: Http, public storage: Storage, ) {
+    this.baseUrl = 'http://oapp.delhinerds.com/login/';
     this.errorMsg = null;
   }
   gotoSignup() {
@@ -31,7 +31,7 @@ export class LoginPage {
     if (parts.length == 2)
       return parts.pop().split(";").shift();
   }
-  setData(data, username, password){
+  setData(data, username, password) {
     this.storage.set('username', username);
     this.storage.set('email', data.email);
     this.storage.set('password', password);
@@ -54,7 +54,7 @@ export class LoginPage {
     return this.http.post(, { username: this.username, password: this.password }, options)
       .map(res => res.json())
       .subscribe(data => {
-        console.log("login data=>", data);
+        // console.log("login data=>", data);
         if (data["error"] == false) {
           this.errorMsg = null;
           this.setData(data, this.username, this.password);

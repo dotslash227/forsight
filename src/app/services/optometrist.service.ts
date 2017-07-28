@@ -18,8 +18,8 @@ export class OptometristService {
 
   constructor(http: Http) {
     this.http = http;
-     = 'http://192.178.7.5:8000/optometrist/';
-    2 = 'http://192.178.7.5:8000/specialisation/';
+    this.baseUrl = 'http://oapp.delhinerds.com/optometrist/';
+    this.baseUrl2 = 'http://oapp.delhinerds.com/specialisation/';
 
     this.getOptometristsInit();
   }
@@ -47,9 +47,9 @@ export class OptometristService {
     });
   }
   filterItemsBySpec(searchTerm) {
-    console.log("this.optometrists spec service", this.optometrists);
+    // console.log("this.optometrists spec service", this.optometrists);
     return this.optometrists.filter((item) => {
-      console.log("iem spec ayrray = ", item.specialisation);
+      // console.log("iem spec ayrray = ", item.specialisation);
       for (var i = 0; i < item.specialisation.length; i++) {
         if (item.specialisation[i].title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
           return item;

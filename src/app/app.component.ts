@@ -25,21 +25,21 @@ export class MyApp {
 
 
   baseUrl: string;
-  pages: Array<{title: string, component: any, icon: string}>;
+  pages: Array<{ title: string, component: any, icon: string }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private http: Http) {
     this.initializeApp();
-     = 'http://192.178.7.5:8000/logout/';
+    this.baseUrl = 'http://oapp.delhinerds.com/logout/';
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage, icon: 'md-home',  },
+      { title: 'Home', component: HomePage, icon: 'md-home', },
       { title: 'News', component: NewsPage, icon: 'md-list-box', },
-      { title: 'Name', component: SearchPage, icon: 'ios-search-outline',  },
-      { title: 'Specialisation', component: SearchBySpecPage, icon: 'ios-eye-outline',  },
-      { title: 'NearMe', component: MapPage, icon: 'ios-locate-outline',  },
-      { title: 'Profile', component: UserPage, icon: 'md-person',  },
-      { title: 'Logout', component: LoginPage, icon: 'md-log-out',  },
+      { title: 'Name', component: SearchPage, icon: 'ios-search-outline', },
+      { title: 'Specialisation', component: SearchBySpecPage, icon: 'ios-eye-outline', },
+      { title: 'NearMe', component: MapPage, icon: 'ios-locate-outline', },
+      { title: 'Profile', component: UserPage, icon: 'md-person', },
+      { title: 'Logout', component: LoginPage, icon: 'md-log-out', },
 
     ];
 
@@ -55,21 +55,26 @@ export class MyApp {
   }
 
   openPage(page) {
-    if(page.component == LoginPage){
+    if (page.component == LoginPage) {
+<<<<<<< HEAD
       console.log("logout called");
       return this.http.get()
+=======
+      // console.log("logout called");
+      return this.http.get( this.baseUrl)
+>>>>>>> branch2
         .map(res => res.json())
         .subscribe(data => {
-          console.log("logout data=>", data);
+          // console.log("logout data=>", data);
           this.nav.setRoot(page.component);
         }, error => {
           console.log(error);
         });
     }
-    else if(page.component == HomePage){
+    else if (page.component == HomePage) {
       this.nav.setRoot(page.component);
     }
-    else{
+    else {
       this.nav.push(page.component);
     }
   }

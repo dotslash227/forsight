@@ -26,7 +26,7 @@ export class EditUserPage {
   errorMsg: string;
 
   constructor(public navCtrl: NavController, private storage: Storage, public http: Http) {
-     = 'http://192.178.7.5:8000/editUser/';
+    this.baseUrl = 'http://oapp.delhinerds.com/editUser/';
     this.getData();
     this.errorMsg = null;
   }
@@ -40,7 +40,7 @@ export class EditUserPage {
 
   setInitData() {
 
-    console.log("set init data");
+    // console.log("set init data");
     this.storage.set('name', 'Arjun Gupta');
     this.storage.set('age', '21');
     this.storage.set('phone', '8860303743');
@@ -73,7 +73,7 @@ export class EditUserPage {
       }, options)
       .map(res => res.json())
       .subscribe(data => {
-        console.log("userEdit data=>", data);
+        // console.log("userEdit data=>", data);
         if (data["error"] == false) {
 
           this.errorMsg = data["msg"];
@@ -97,7 +97,7 @@ export class EditUserPage {
   }
 
   getData(): boolean {
-    console.log("get data called of editUser");
+    // console.log("get data called of editUser");
     this.storage.get('username').then((val) => {
       if (val == null) {
         return false;
