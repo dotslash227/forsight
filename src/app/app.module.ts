@@ -28,7 +28,6 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { LocationsProvider } from '../providers/locations/locations';
 import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
 import { GoogleMapsDirProvider } from '../providers/google-maps/google-mapsDir';
 import { ConnectivityProvider } from '../providers/connectivity/connectivity';
@@ -99,7 +98,6 @@ import { DirectionsPage } from '../pages/directions/directions';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    LocationsProvider,
     GoogleMapsProvider,
     GoogleMapsDirProvider,
     ConnectivityProvider,

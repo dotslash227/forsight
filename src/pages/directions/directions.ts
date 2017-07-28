@@ -22,7 +22,7 @@ export class DirectionsPage {
       this.lon = params.get('lon');
       this.lat = params.get('lat');
       this.data = {"optometrist": this.optometrist, "userLon": this.lon, "userLat": this.lat};
-      console.log("data in directions.ts=", this.data);
+      // console.log("data in directions.ts=", this.data);
 
   }
 

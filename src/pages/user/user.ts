@@ -20,13 +20,11 @@ export class UserPage {
     this.getData();
   }
   ngOnInit() {
-    console.log("here in user");
     if(this.getData() == false){
       // this.setInitData();
     }
   }
   setInitData(){
-    console.log("set init data");
     this.storage.set('name', 'Arjun Gupta');
     this.storage.set('age', '21');
     this.storage.set('phone', '8860303743');

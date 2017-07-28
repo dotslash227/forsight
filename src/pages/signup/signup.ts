@@ -25,7 +25,7 @@ export class SignupPage {
 
 
   constructor(public navCtrl: NavController, private http: Http) {
-     this.baseUrl = 'http://192.178.7.5:8000/signup/';
+     this.baseUrl = '/signup/';
     this.errorMsg = null;
   }
   isValidUsername() {
@@ -67,7 +67,7 @@ export class SignupPage {
       }, options)
       .map(res => res.json())
       .subscribe(data => {
-        console.log("signup data=>", data);
+        // console.log("signup data=>", data);
         if (data["error"] == false) {
           this.errorMsg = data["msg"];
           this.navCtrl.setRoot(LoginPage, {

@@ -35,12 +35,12 @@ export class NewsPage {
   }
 
   ngOnInit(){
-    console.log('onInit ran');
+    // console.log('onInit ran');
     this.getPosts(this.category, this.limit);
   }
   getPosts(category, limit){
     this.newsService.getPosts(category, limit).subscribe(response=>{
-      console.log(response);
+      // console.log(response);
       this.items=response.data.children;
 
     });

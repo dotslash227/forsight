@@ -17,7 +17,7 @@ export class PhotoUploadPage {
   errorMsg: string;
 
   constructor(public navCtrl: NavController, private http: Http, private transfer: Transfer, private camera: Camera) {
-     this.baseUrl = 'http://192.178.7.5:8000/photoUpload/';
+     this.baseUrl = '/photoUpload/';
     this.errorMsg = null;
   }
   upload() {

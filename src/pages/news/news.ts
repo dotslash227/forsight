@@ -15,12 +15,12 @@ export class NewsPage {
   }
 
   ngOnInit(){
-    console.log('onInit ran');
+    // console.log('onInit ran');
     this.getPosts();
   }
   getPosts(){
     this.newsService.getPosts().subscribe(response=>{
-      console.log("news response=", response);
+      // console.log("news response=", response);
       this.items=response;
 
     });

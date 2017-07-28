@@ -20,10 +20,6 @@ import { GoogleMapsDirProvider } from '../../providers/google-maps/google-mapsDi
    constructor(public navCtrl: NavController,  public maps: GoogleMapsDirProvider) {
 
    }
-
-   ionViewDidLoad() {
-     console.log('Hello ListPage Page');
-     console.log(this.maps.directions);
-   }
+   
 
  }
