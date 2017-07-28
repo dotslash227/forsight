@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { GoogleMapsProvider } from '../../providers/google-maps/google-maps';
 import { NavController, Platform } from 'ionic-angular';
-import {OptometristService} from '../../app/services/optometrist.service';
+// import {OptometristService} from '../../app/services/optometrist.service';
 import { Geolocation } from 'ionic-native';
 import {Http, RequestOptions, Headers} from '@angular/http';
 import {OptometristPage} from '../optometrist/optometrist'
@@ -11,14 +11,14 @@ import {DirectionsPage} from '../directions/directions';
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',
-  providers: [OptometristService],
+  // providers: [OptometristService],
 })
 export class MapPage {
   optometrists: any;
   optometristsByDistance: any;
   lon: number;
   lat: number;
-  baseUrl2: string;
+  baseUrl: string;
 
 
   @ViewChild('map') mapElement: ElementRef;
@@ -27,10 +27,10 @@ export class MapPage {
   constructor(public navCtrl: NavController,
     public maps: GoogleMapsProvider,
     public platform: Platform,
-    private optometristService: OptometristService,
+    // private optometristService: OptometristService,
     private http: Http,
   ) {
-    this.baseUrl2 = 'http://oapp.delhinerds.com/distance/';
+    this.baseUrl = 'http://oapp.delhinerds.com/distance/';
     this.getOptometrists();
   }
 
@@ -62,7 +62,7 @@ export class MapPage {
       this.lon = position.coords.longitude;
       // console.log("distance data mapsts=", this.lat, this.lon);
 
-      return this.http.post(this.baseUrl2, { lon: this.lon, lat: this.lat }, options)
+      return this.http.post(this.baseUrl, { lon: this.lon, lat: this.lat }, options)
         .map(res => res.json())
         .subscribe(response => {
           // console.log("response=", response["optometrists"]);

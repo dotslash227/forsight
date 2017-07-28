@@ -58,7 +58,7 @@ export class EditUserPage {
     });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(,
+    return this.http.post(this.baseUrl,
       {
         username: this.username,
         email: this.email,

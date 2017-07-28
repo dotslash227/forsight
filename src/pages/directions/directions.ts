@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { MapDirPage } from '../map/mapDir';
 import { ListPage } from '../list/list';
 import { NavController, NavParams } from 'ionic-angular';

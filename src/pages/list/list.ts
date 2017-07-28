@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 // import { Locations } from '../../providers/locations/locations';
 import { GoogleMapsDirProvider } from '../../providers/google-maps/google-mapsDir';
 
@@ -20,6 +20,6 @@ import { GoogleMapsDirProvider } from '../../providers/google-maps/google-mapsDi
    constructor(public navCtrl: NavController,  public maps: GoogleMapsDirProvider) {
 
    }
-   
+
 
  }

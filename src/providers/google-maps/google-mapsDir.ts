@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ConnectivityProvider } from '../connectivity/connectivity';
-import { Geolocation } from 'ionic-native';
 
 declare var google;
 
