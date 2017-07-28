@@ -56,7 +56,7 @@ export class MyApp {
 
   openPage(page) {
     if (page.component == LoginPage) {
-      return this.http.get( this.baseUrl)
+      return this.http.get(this.baseUrl)
         .map(res => res.json())
         .subscribe(data => {
           // console.log("logout data=>", data);

@@ -11,7 +11,7 @@ export class NewsService{
     this.baseUrl = 'http://oapp.delhinerds.com/news/';
   }
   getPosts(){
-    return this.http.get()
+    return this.http.get(this.baseUrl)
                .map(res=>res.json());
   }
 

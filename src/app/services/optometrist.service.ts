@@ -25,7 +25,7 @@ export class OptometristService {
   }
 
   getOptometristsInit() {
-    return this.http.get()
+    return this.http.get(this.baseUrl)
       .map(res => res.json())
       .subscribe(data => {
         this.optometrists = data;
@@ -37,7 +37,7 @@ export class OptometristService {
   }
 
   getOptometristsSubs() {
-    return this.http.get()
+    return this.http.get(this.baseUrl)
       .map(res => res.json());
 
   }
@@ -58,7 +58,7 @@ export class OptometristService {
   }
 
   getSpecialisationInit() {
-    return this.http.get(2)
+    return this.http.get(this.baseUrl2)
       .map(res => res.json())
   }
 
