@@ -21,12 +21,11 @@ export class GoogleMapsProvider {
 
 
   constructor(public connectivityService: ConnectivityProvider,
-              private optometristService: OptometristService
-              )
-              {
-                // this.initMap();
-                // this.enableMap();
-              }
+    private optometristService: OptometristService
+  ) {
+    // this.initMap();
+    // this.enableMap();
+  }
 
   init(mapElement: any, pleaseConnect: any): Promise<any> {
     this.mapElement = mapElement;
@@ -38,14 +37,14 @@ export class GoogleMapsProvider {
 
     return new Promise((resolve) => {
 
-      if(typeof google == "undefined" || typeof google.maps == "undefined"){
+      if (typeof google == "undefined" || typeof google.maps == "undefined") {
 
         console.log("Google maps JavaScript needs to be loaded.");
 
-          console.log("here disableMap2");
+        console.log("here disableMap2");
         this.disableMap();
 
-        if(this.connectivityService.isOnline()){
+        if (this.connectivityService.isOnline()) {
 
           window['mapInit'] = () => {
 
@@ -60,7 +59,7 @@ export class GoogleMapsProvider {
           script.id = "googleMaps";
           this.apiKey = "AIzaSyCNy3fNswCBZ2gX162iYCwPQ8kFkQxqmNI";
 
-          if(this.apiKey){
+          if (this.apiKey) {
             script.src = 'http://maps.googleapis.com/maps/api/js?key=' + this.apiKey + '&callback=mapInit';
           } else {
             script.src = 'http://maps.googleapis.com/maps/api/js?callback=mapInit';
@@ -72,7 +71,7 @@ export class GoogleMapsProvider {
       }
       else {
 
-        if(this.connectivityService.isOnline()){
+        if (this.connectivityService.isOnline()) {
           this.initMap();
           this.enableMap();
         }
@@ -127,7 +126,7 @@ export class GoogleMapsProvider {
 
   disableMap(): void {
 
-    if(this.pleaseConnect){
+    if (this.pleaseConnect) {
       this.pleaseConnect.style.display = "block";
     }
 
@@ -135,7 +134,7 @@ export class GoogleMapsProvider {
 
   enableMap(): void {
 
-    if(this.pleaseConnect){
+    if (this.pleaseConnect) {
       this.pleaseConnect.style.display = "none";
     }
 
@@ -149,11 +148,11 @@ export class GoogleMapsProvider {
 
       setTimeout(() => {
 
-        if(typeof google == "undefined" || typeof google.maps == "undefined"){
+        if (typeof google == "undefined" || typeof google.maps == "undefined") {
           this.loadGoogleMaps();
         }
         else {
-          if(!this.mapInitialised){
+          if (!this.mapInitialised) {
             this.initMap();
           }
 
@@ -183,12 +182,20 @@ export class GoogleMapsProvider {
       animation: google.maps.Animation.DROP,
       position: latLng,
       title: title,
+      label: {
+        text: title,
+        color: "#eb3a44",
+        fontSize: "16px",
+        fontWeight: "bold"
+      },
       options: {
         icon: {
-            url: icon,
-            scaledSize: new google.maps.Size(34, 34),
-            origin: new google.maps.Point(0,0), // origin
-            anchor: new google.maps.Point(0, 0) // anchor
+          url: icon,
+          scaledSize: new google.maps.Size(34, 34),
+          origin: new google.maps.Point(0, 0), // origin
+          // anchor: new google.maps.Point(0, 0), // anchor
+          anchor: new google.maps.Point(32, 65),
+          labelOrigin: new google.maps.Point(25, 40)
         }
       }
     });
@@ -196,12 +203,12 @@ export class GoogleMapsProvider {
 
   }
 
-  getOptometrists(){
+  getOptometrists() {
 
-    this.optometrists=this.optometristService.getOptometrists()
-      for (let each of this.optometrists) {
-        this.addMarker(Number(each["lat"]), Number(each["lon"]), "Optometrist", "assets/icon/opto.png");
-      }
+    this.optometrists = this.optometristService.getOptometrists()
+    for (let each of this.optometrists) {
+      this.addMarker(Number(each["lat"]), Number(each["lon"]), each["name"], "assets/icon/opto.png");
+    }
 
   }
 

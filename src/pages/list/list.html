@@ -7,15 +7,12 @@
       Directions
     </ion-title>
   </ion-navbar>
-
 </ion-header>
 <ion-content>
-
   <ion-list>
     <ion-list-header>
       <h3>Total Duration: {{maps.duration}}</h3>
       <h3>Total Distance: {{maps.distance}}</h3>
-
     </ion-list-header>
     <ion-item *ngFor="let item of maps.directions">
       <ion-avatar item-left>
@@ -26,5 +23,4 @@
       <p [innerHTML]="item.duration.text"></p>
     </ion-item>
   </ion-list>
-
 </ion-content>
