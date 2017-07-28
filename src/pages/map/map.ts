@@ -6,6 +6,8 @@ import {OptometristService} from '../../app/services/optometrist.service';
 import { Geolocation } from 'ionic-native';
 import {Http, RequestOptions, Headers} from '@angular/http';
 import {OptometristPage} from '../optometrist/optometrist'
+import {DirectionsPage} from '../directions/directions';
+
 
 @Component({
   selector: 'page-map',
@@ -18,6 +20,7 @@ export class MapPage {
   lon: number;
   lat: number;
   baseUrl2: string;
+
 
   @ViewChild('map') mapElement: ElementRef;
   @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
@@ -82,6 +85,13 @@ export class MapPage {
     })
   }
 
+  getDirections(item){
+    this.navCtrl.push(DirectionsPage, {
+      'item': item["optometrist"],
+      'lon': this.lon,
+      'lat': this.lat
+    })
+  }
 
 
 }

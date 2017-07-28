@@ -21,6 +21,7 @@ import { SearchBySpecPage } from '../pages/search/searchBySpec';
 import { SearchResultPage } from '../pages/search/searchResult';
 
 import { MapPage } from '../pages/map/map';
+import { MapDirPage } from '../pages/map/mapDir';
 
 import { ListPage } from '../pages/list/list';
 
@@ -29,6 +30,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LocationsProvider } from '../providers/locations/locations';
 import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
+import { GoogleMapsDirProvider } from '../providers/google-maps/google-mapsDir';
 import { ConnectivityProvider } from '../providers/connectivity/connectivity';
 
 
@@ -43,6 +45,7 @@ import { PhotoUploadPage } from '../pages/photoUpload/photoUpload';
 
 import {OptometristListPage} from '../pages/optometristList/optometristList';
 
+import { DirectionsPage } from '../pages/directions/directions';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,8 @@ import {OptometristListPage} from '../pages/optometristList/optometristList';
     PhotoUploadPage,
     MapPage,
     OptometristListPage,
+    DirectionsPage,
+    MapDirPage,
   ],
   imports: [
     BrowserModule,
@@ -87,18 +92,23 @@ import {OptometristListPage} from '../pages/optometristList/optometristList';
     MapPage,
     PhotoUploadPage,
     OptometristListPage,
+    DirectionsPage,
+    MapDirPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LocationsProvider, GoogleMapsProvider, ConnectivityProvider,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    LocationsProvider,
+    GoogleMapsProvider,
+    GoogleMapsDirProvider,
+    ConnectivityProvider,
     Network,
     OptometristService,
-    Transfer,Camera,
+    Transfer, Camera,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
