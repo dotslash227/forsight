@@ -26,7 +26,7 @@ export class EditUserPage {
   errorMsg: string;
 
   constructor(public navCtrl: NavController, private storage: Storage, public http: Http) {
-     this.baseUrl = 'http://192.178.7.5:8000/editUser/';
+     = 'http://192.178.7.5:8000/editUser/';
     this.getData();
     this.errorMsg = null;
   }
@@ -58,7 +58,7 @@ export class EditUserPage {
     });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post( this.baseUrl,
+    return this.http.post(,
       {
         username: this.username,
         email: this.email,

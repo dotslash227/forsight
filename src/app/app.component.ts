@@ -29,7 +29,7 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private http: Http) {
     this.initializeApp();
-     this.baseUrl = 'http://192.178.7.5:8000/logout/';
+     = 'http://192.178.7.5:8000/logout/';
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -57,7 +57,7 @@ export class MyApp {
   openPage(page) {
     if(page.component == LoginPage){
       console.log("logout called");
-      return this.http.get( this.baseUrl)
+      return this.http.get()
         .map(res => res.json())
         .subscribe(data => {
           console.log("logout data=>", data);

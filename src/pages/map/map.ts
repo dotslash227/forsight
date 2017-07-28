@@ -32,7 +32,7 @@ export class MapPage {
     private optometristService: OptometristService,
     private http: Http,
   ) {
-     this.baseUrl2 = 'http://192.178.7.5:8000/distance/';
+    2 = 'http://192.178.7.5:8000/distance/';
 
     this.getOptometrists();
   }
@@ -65,7 +65,7 @@ export class MapPage {
       this.lon = position.coords.longitude;
       console.log("distance data mapsts=", this.lat, this.lon);
 
-      return this.http.post( this.baseUrl2, { lon: this.lon, lat: this.lat }, options)
+      return this.http.post(2, { lon: this.lon, lat: this.lat }, options)
         .map(res => res.json())
         .subscribe(response => {
           console.log("response=", response["optometrists"]);
@@ -77,7 +77,7 @@ export class MapPage {
 
   search(item){
     console.log("item.photo in maps.ts before=", item.photo);
-    item.photo = "http://192.178.7.5:8000" + item.photo;
+    item.photo =  "http://192.178.7.5:8000" + item.photo;
     console.log("item.photo in maps.ts after=", item.photo);
 
     this.navCtrl.push(OptometristPage, {

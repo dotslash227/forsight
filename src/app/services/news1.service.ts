@@ -8,10 +8,10 @@ export class NewsService1{
   baseUrl: string;
   constructor(http: Http){
     this.http = http;
-     this.baseUrl = 'http://www.reddit.com/r';
+     = 'http://www.reddit.com/r';
   }
   getPosts(category, limit){
-    return this.http.get( this.baseUrl+'/'+category+ '/top.json?limit='+limit)
+    return this.http.get(+'/'+category+ '/top.json?limit='+limit)
                .map(res=>res.json());
   }
 
