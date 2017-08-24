@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
+import { CallNumber } from '@ionic-native/call-number';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
@@ -105,7 +107,8 @@ import { DirectionsPage } from '../pages/directions/directions';
     OptometristService,
     Transfer, Camera,
     StatusBar,
-    SplashScreen,
+    CallNumber,
+    EmailComposer,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

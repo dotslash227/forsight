@@ -12,6 +12,8 @@ import { UserPage } from '../pages/user/user';
 import {PhotoUploadPage} from '../pages/photoUpload/photoUpload';
 
 import { LoginPage } from '../pages/login/login';
+import { OptometristListPage } from '../pages/optometristList/optometristList';
+
 import {Http} from '@angular/http';
 
 @Component({
@@ -21,6 +23,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
+  // rootPag: any = OptometristListPage;
   // rootPage: any = PhotoUploadPage;
 
 

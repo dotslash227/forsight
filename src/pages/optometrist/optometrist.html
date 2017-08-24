@@ -28,8 +28,19 @@
           <h5 *ngIf="item.workplaceAddress">{{ item.workplaceAddress }}</h5>
 
           <h1 style="color:black" >Contact Details:</h1>
-          <h5 *ngIf="item.email">Email: {{ item.email }}</h5>
-          <h5 *ngIf="item.contact">Phone: {{ item.contact }}</h5>
+          <h5 *ngIf="item.email">Email: {{ item.email }}
+            <span>
+              <ion-icon name="ios-mail-outline"></ion-icon>
+              <button ionic-button (click)="email(item.email)">Email</button>
+            </span>
+          </h5>
+          <h5 *ngIf="item.contact">Phone: {{ item.contact }}
+            <span>
+              <ion-icon name="ios-call-outline"></ion-icon>
+              <button ionic-button (click)="callIT(item.contact)">Call</button>
+            </span>
+          </h5>
+          <br><br>
       </span>
     </div>
   </div>
