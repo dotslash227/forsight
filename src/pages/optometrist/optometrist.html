@@ -18,7 +18,7 @@
           <h4 *ngFor="let spec of item.specialisation">
             {{ spec.title }}
           </h4>
-
+le.c
           <h1 style="color:black" >Description:</h1>
           <h4 *ngIf="item.qualification">{{ item.qualification }}</h4>
           <h4 *ngIf="item.workExperience">{{ item.workExperience }}</h4>
@@ -28,8 +28,8 @@
           <h5 *ngIf="item.workplaceAddress">{{ item.workplaceAddress }}</h5>
 
           <h1 style="color:black" >Contact Details:</h1>
-          <h5 *ngIf="item.email">Email: {{ item.email }}</h5>
-          <h5 *ngIf="item.contact">Phone: {{ item.contact }}</h5>
+          <h5 *ngIf="item.email">Email: <a href="mailto:{{item.email}}">{{ item.email }}</a></h5>
+          <h5 *ngIf="item.contact">Phone: <a href="tel:{{item.contact}}">{{ item.contact }}</a></h5>
       </span>
     </div>
   </div>

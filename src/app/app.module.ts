@@ -45,6 +45,7 @@ import { PhotoUploadPage } from '../pages/photoUpload/photoUpload';
 import {OptometristListPage} from '../pages/optometristList/optometristList';
 
 import { DirectionsPage } from '../pages/directions/directions';
+import { FilterPipe } from '../pages/search/search.pipe';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { DirectionsPage } from '../pages/directions/directions';
     OptometristListPage,
     DirectionsPage,
     MapDirPage,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

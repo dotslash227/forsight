@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {OptometristService} from '../../app/services/optometrist.service';
 import {OptometristListPage} from '../optometristList/optometristList';
-
 
 @Component({
   selector: 'searchSpec',
   templateUrl: 'searchBySpec.html'
 })
+
 
 export class SearchBySpecPage {
 
@@ -18,6 +18,7 @@ export class SearchBySpecPage {
   constructor(public navCtrl: NavController, public optometristService: OptometristService) {
     this.getSpecialisations();
   }
+
   ionViewDidLoad() {
     // this.setFilteredItems();
 
@@ -33,7 +34,7 @@ export class SearchBySpecPage {
 
   }
   setFilteredItems() {
-
+    this.items = this.optometristService.filterItemsByName(this.searchTerm);
   }
 
   select(item) {

@@ -8,66 +8,43 @@
 
 </ion-header>
 
-<ion-content class="home" style="background: url(assets/icon/opto.jpg)  center;background-size:cover;">
+<ion-content class="home">
 
   <!-- <div class="background-image"></div> -->
 
   <ion-grid>
     <ion-row>
-
-      <ion-col  col-6>
+      <ion-col col-12 >
         <ion-card (click)="searchOptoByName()">
-          <ion-card-header>
-            <ion-item>
-              <h1>Search By</h1><h1>Name</h1>
-              <!-- <h3>Search any Optometrists.</h3> -->
-              <ion-icon name="ios-search-outline" item-end style="margin-right: 0px"></ion-icon>
-            </ion-item>
-          </ion-card-header>
+          <h1>Search By Name</h1>
         </ion-card>
       </ion-col>
-      <ion-col  col-6>
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
         <ion-card (click)="searchOptoBySpec()">
-          <ion-card-header>
-            <ion-item>
-              <h1>Search By</h1><h1>Specialisation</h1>
-              <!-- <h3>Search any Optometrists.</h3> -->
-              <ion-icon name="ios-eye-outline" item-end style="margin-right: 0px"></ion-icon>
-            </ion-item>
-          </ion-card-header>
+          <h1>Search By Specialisation</h1>
         </ion-card>
       </ion-col>
-      <ion-col  col-6>
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
         <ion-card (click)="nearMe()">
-          <ion-card-header>
-            <ion-item>
-              <h1>Near Me</h1>
-              <!-- <h3>Search Nearby Optometrists.</h3> -->
-              <ion-icon name="ios-locate-outline" item-end style="margin-right: 0px"></ion-icon>
-            </ion-item>
-          </ion-card-header>
+          <h1>Optometrists near me</h1>
         </ion-card>
       </ion-col>
-      <ion-col  col-6>
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
         <ion-card (click)="profile()">
-          <ion-card-header>
-            <ion-item>
-              <h1>My Profile</h1>
-              <!-- <h3>View and Edit Profile.</h3> -->
-              <ion-icon name="md-person" item-end style="margin-right: 0px"></ion-icon>
-            </ion-item>
-          </ion-card-header>
+          <h1>My Profile</h1>
         </ion-card>
       </ion-col>
-      <ion-col  col-12 style="padding: 5px;">
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
         <ion-card (click)="news()">
-
-            <ion-item text-center style="background-color: rgba(183, 195, 183, 1);">
-              <h1> News</h1>
-              <!-- <h3>Get all the latest News and Updates.</h3> -->
-              <ion-icon name="md-list-box" item-end style="margin-right: 0px"></ion-icon>
-            </ion-item>
-
+          <h1>News</h1>
         </ion-card>
       </ion-col>
     </ion-row>
