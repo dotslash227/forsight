@@ -48,3 +48,10 @@ npm install --save @ionic-native/transfer
 
 ionic cordova plugin add cordova-plugin-camera
 npm install --save @ionic-native/camera
+
+
+ionic cordova plugin add call-number
+npm install --save @ionic-native/call-number
+
+ionic cordova plugin add cordova-plugin-email-composer
+npm install --save @ionic-native/email-composer

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { CallNumber } from '@ionic-native/call-number';
+import { EmailComposer } from '@ionic-native/email-composer';
+
 
 @Component({
   selector: 'page-optometrist',
@@ -12,10 +15,24 @@ export class OptometristPage {
   address: string;
   item: any;
 
-  constructor(public navCtrl: NavController, public params: NavParams){
+  constructor(private emailComposer: EmailComposer, private callNumber: CallNumber, public navCtrl: NavController, public params: NavParams){
     this.item =params.get('item');
     console.log("item.photo in maps.ts=", this.item.photo);
-
   }
+  callIT(passedNumber){
+    this.callNumber.callNumber(passedNumber, true)
+    .then(() => console.log('Launched dialer!'))
+    .catch(() => console.log('Error launching dialer'));
+  }
+  email(passedEmail){
+    let email = {
+      to: passedEmail,
+      isHtml: true
+    };
+    this.emailComposer.open(email)
+    .then(() => console.log('Launched Email!'))
+    .catch(() => console.log('Error launching Email'));
+  }
+
 
 }
