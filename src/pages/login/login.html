@@ -1,10 +1,15 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Login</ion-title>
+    <ion-title>Welcome to Forsight</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content text-center class="login" padding="true" style="background: url(assets/icon/opto.jpg)  center;background-size:cover;">
 
+<ion-content text-center class="login" padding="true" style="background-color: #EBF5FB;">
+  <img src="assets/logo.png" width="250" style="margin-bottom:15px;" />
+  <h3 style="margin-top:-15px; font-style:italic; color:#029DFA;">search your optometrist</h3><br />
+  <p>Forsight helps you get latest information on eye care and connects you with experienced with optometrists for your primary eye care</p>
+  <br />
+  <br />
   <ion-list>
     <ion-item>
       <ion-label fixed>Username</ion-label>
@@ -17,9 +22,8 @@
   </ion-list>
   <div padding>
     <p *ngIf="errorMsg" style="color:red; background-color: white;">{{errorMsg}}</p>
-    <button ion-button color="primary" block (click)="login()">Log In</button>
+    <button ion-button color="secondary" block (click)="login()">Log In</button>
+    <button ion-button color="primary" block (click)="gotoSignup()">Signup</button>
   </div>
-
-  <a href="#" style="color: blue;" (click)="gotoSignup()" >Dont have an account? Signup.</a>
 
 </ion-content>
