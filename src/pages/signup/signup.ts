@@ -18,9 +18,14 @@ export class SignupPage {
   age: number;
   phone: string;
   address: string;
-  od: number;
-  os: number;
-  va: number;
+  od_sph: number;
+  od_cyl: number;
+  od_axis: number;
+  od_va: string;
+  os_sph: number;
+  os_cyl: number;
+  os_axis: number;
+  os_va: string;
   errorMsg: string;
 
 
@@ -61,9 +66,14 @@ export class SignupPage {
         age: this.age,
         phone: this.phone,
         address: this.address,
-        od: this.od,
-        os: this.os,
-        va: this.va,
+        od_sph: this.od_sph,
+        od_cyl: this.od_cyl,
+        od_axis: this.od_axis,
+        od_va: this.od_va,
+        os_sph: this.os_sph,
+        os_cyl: this.os_cyl,
+        os_axis: this.os_axis,
+        os_va: this.os_va,
       }, options)
       .map(res => res.json())
       .subscribe(data => {

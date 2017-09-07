@@ -37,7 +37,7 @@ le.c
           <h5 *ngIf="item.contact">Phone: {{ item.contact }}
             <span>
               <ion-icon name="ios-call-outline"></ion-icon>
-              <button ionic-button (click)="callIT(item.contact)">Call</button>
+              <button ionic-button><a href="tel:{{item.contact}}">Call</a></button>
             </span>
           </h5>
           <br><br>

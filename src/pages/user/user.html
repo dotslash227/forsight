@@ -23,7 +23,7 @@
   </ion-card>
 
   <ion-card>
-
+    <ion-card-header>My Information</ion-card-header>
     <ion-list>
       <ion-item>
         Name: {{name}}
@@ -45,23 +45,30 @@
 
       </ion-item>
 
-      <ion-item>
-        OD: {{od}}
-
-      </ion-item>
-
-      <ion-item>
-        OS: {{os}}
-
-      </ion-item>
-
-      <ion-item>
-        VA: {{va}}
-
-      </ion-item>
     </ion-list>
 
   </ion-card>
 
+  <ion-card>
+    <ion-card-header>My Prescription</ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card-header>Right Eye (OD)</ion-card-header>
+          <ion-item>Sph:{{od_sph}}</ion-item>
+          <ion-item>Cyl:{{od_cyl}}</ion-item>
+          <ion-item>Axis:{{od_axis}}</ion-item>
+          <ion-item>VA:{{od_va}}</ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-card-header>Left Eye (OD)</ion-card-header>
+          <ion-item>Sph:{{os_sph}}</ion-item>
+          <ion-item>Cyl:{{os_cyl}}</ion-item>
+          <ion-item>Axis:{{os_axis}}</ion-item>
+          <ion-item>VA:{{os_va}}</ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 
 </ion-content>
