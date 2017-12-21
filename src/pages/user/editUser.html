@@ -35,20 +35,45 @@
       <ion-input type="text" [(ngModel)]="address"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label fixed>OD:</ion-label>
-      <ion-input type="text" [(ngModel)]="od"></ion-input>
-    </ion-item>
+    <ion-card-header>Enter your Rx for right eye (OD)</ion-card-header>
 
     <ion-item>
-      <ion-label fixed>OS:</ion-label>
-      <ion-input type="text" [(ngModel)]="os"></ion-input>
+      <ion-label fixed>Spherical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_sph"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Cylindrical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_cyl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Axis:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_axis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Visual Acuity:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_va"></ion-input>
     </ion-item>
 
+    <ion-card-header>Enter your Rx for left eye (OS)</ion-card-header>
+
     <ion-item>
-      <ion-label fixed>VA:</ion-label>
-      <ion-input type="text" [(ngModel)]="va"></ion-input>
+      <ion-label fixed>Spherical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_sph"></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label fixed>Cylindrical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_cyl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Axis:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_axis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Visual Acuity:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_va"></ion-input>
+    </ion-item>
+
+
 
   </ion-list>
 

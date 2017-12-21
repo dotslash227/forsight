@@ -5,6 +5,7 @@ import {Http, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/Rx';
 import {HomePage} from '../home/home';
 import { Storage } from '@ionic/storage';
+import { Facebook, FacebookLoginResponse} from '@ionic-native/facebook';
 
 @Component({
   selector: 'page-login',
@@ -16,8 +17,8 @@ export class LoginPage {
   username: string;
   password: string;
   errorMsg: string;
-  constructor(public navCtrl: NavController, private http: Http, public storage: Storage, ) {
-    this.baseUrl = 'http://oapp.delhinerds.com/login/';
+  constructor(public navCtrl: NavController, private http: Http, public storage: Storage, private fb: Facebook) {
+    this.baseUrl = 'http://127.0.0.1:8000/login/';
     this.errorMsg = null;
   }
   gotoSignup() {
@@ -40,9 +41,14 @@ export class LoginPage {
     this.storage.set('age', Number(data.age));
     this.storage.set('phone', Number(data.phone));
     this.storage.set('address', data.address);
-    this.storage.set('od', Number(data.od));
-    this.storage.set('os', Number(data.os));
-    this.storage.set('va', Number(data.va));
+    this.storage.set('od_sph', Number(data.od_sph));
+    this.storage.set('od_cyl', Number(data.od_cyl));
+    this.storage.set('od_axis', Number(data.od_va));
+    this.storage.set('od_va', Number(data.od_va));
+    this.storage.set('os_sph', Number(data.os_sph));
+    this.storage.set('os_cyl', Number(data.os_cyl));
+    this.storage.set('os_axis', Number(data.os_va));
+    this.storage.set('os_va', Number(data.os_va));
   }
   login() {
     let headers = new Headers({
@@ -68,5 +74,12 @@ export class LoginPage {
       }, error => {
         console.log(error);
       });
+  }
+  fblogin(){
+    this.fb.login(['public_profile', 'user_friends', 'email'])
+  .then((res: FacebookLoginResponse) => console.log('Logged into Facebook!', res))
+  .catch(e => console.log('Error logging into Facebook', e));
+
+    this.fb.logEvent(this.fb.EVENTS.EVENT_NAME_ADDED_TO_CART);
   }
 }

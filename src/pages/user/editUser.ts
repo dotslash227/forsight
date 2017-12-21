@@ -16,9 +16,14 @@ export class EditUserPage {
   age: number;
   phone: string;
   address: string;
-  od: number;
-  os: number;
-  va: number;
+  od_sph: number;
+  od_cyl: number;
+  od_axis: number;
+  od_va: string;
+  os_sph: number;
+  os_cyl: number;
+  os_axis: number;
+  os_va: string;
 
   baseUrl: string;
 
@@ -26,7 +31,7 @@ export class EditUserPage {
   errorMsg: string;
 
   constructor(public navCtrl: NavController, private storage: Storage, public http: Http) {
-    this.baseUrl = 'http://oapp.delhinerds.com/editUser/';
+    this.baseUrl = 'http://127.0.0.1:8000/editUser/';
     this.getData();
     this.errorMsg = null;
   }
@@ -45,9 +50,14 @@ export class EditUserPage {
     this.storage.set('age', '21');
     this.storage.set('phone', '8860303743');
     this.storage.set('address', '91springboard, Sector-1,Noida');
-    this.storage.set('od', '1.1');
-    this.storage.set('os', '1.2');
-    this.storage.set('va', '1.0');
+    this.storage.set('od_sph', '2.0');
+    this.storage.set('od_cyl', '0');
+    this.storage.set('od_axis', '180');
+    this.storage.set('od_va', '6/6');
+    this.storage.set('os_sph', '2.0');
+    this.storage.set('os_cyl', '0');
+    this.storage.set('os_axis', '180');
+    this.storage.set('os_va', '6/6');
 
   }
 
@@ -67,9 +77,14 @@ export class EditUserPage {
         age: this.age,
         phone: this.phone,
         address: this.address,
-        od: this.od,
-        os: this.os,
-        va: this.va
+        od_sph: this.od_sph,
+        od_cyl: this.od_cyl,
+        od_axis: this.od_axis,
+        od_va: this.od_va,
+        os_sph: this.os_sph,
+        os_cyl: this.os_cyl,
+        os_axis: this.os_axis,
+        os_va: this.os_va,
       }, options)
       .map(res => res.json())
       .subscribe(data => {
@@ -81,9 +96,14 @@ export class EditUserPage {
           this.storage.set('age', this.age);
           this.storage.set('phone', this.phone);
           this.storage.set('address', this.address);
-          this.storage.set('od', this.od);
-          this.storage.set('os', this.os);
-          this.storage.set('va', this.va);
+          this.storage.set('od_sph', this.od_sph);
+          this.storage.set('od_cyl', this.od_cyl);
+          this.storage.set('od_va', this.od_va);
+          this.storage.set('od_axis', this.od_axis);
+          this.storage.set('os_sph', this.os_sph);
+          this.storage.set('os_cyl', this.os_cyl);
+          this.storage.set('os_va', this.os_va);
+          this.storage.set('os_axis', this.os_axis);
           this.navCtrl.setRoot(HomePage);
         }
         else {
@@ -140,23 +160,53 @@ export class EditUserPage {
       }
       this.address = val;
     });
-    this.storage.get('od').then((val) => {
+    this.storage.get('od_sph').then((val) => {
       if (val == null) {
         return false;
       }
-      this.od = val;
+      this.od_sph = val;
     });
-    this.storage.get('os').then((val) => {
+    this.storage.get('od_cyl').then((val) => {
       if (val == null) {
         return false;
       }
-      this.os = val;
+      this.od_cyl = val;
     });
-    this.storage.get('va').then((val) => {
+    this.storage.get('od_axis').then((val) => {
       if (val == null) {
         return false;
       }
-      this.va = val;
+      this.od_axis = val;
+    });
+    this.storage.get('od_va').then((val) => {
+      if (val == null) {
+        return false;
+      }
+      this.od_va = val;
+    });
+    this.storage.get('os_sph').then((val) => {
+      if (val == null) {
+        return false;
+      }
+      this.os_sph = val;
+    });
+    this.storage.get('os_cyl').then((val) => {
+      if (val == null) {
+        return false;
+      }
+      this.os_cyl = val;
+    });
+    this.storage.get('os_axis').then((val) => {
+      if (val == null) {
+        return false;
+      }
+      this.os_axis = val;
+    });
+    this.storage.get('os_va').then((val) => {
+      if (val == null) {
+        return false;
+      }
+      this.os_va = val;
     });
     return true;
   }

@@ -4,7 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Nearby
+      Optometrists Near Me
     </ion-title>
   </ion-navbar>
 
@@ -26,14 +26,14 @@
               <ion-list *ngFor="let each of optometristsByDistance">
                 <ion-list-header>
                   <h2>{{ each.optometrist.name }}</h2>
-                  <button ion-button color="light" (click)="getDirections(each)">Get Directions On Map</button>
+                  <!-- <button ion-button color="light" (click)="getDirections(each)">Get Directions On Map</button> -->
                   <br>
                   <button ion-button color="light"  (click)="search(each.optometrist)">Show Optometrist Profile</button>
                   <br>
-                  <p>From your current location:</p>
+                  <!-- <p>From your current location:</p>
                   <p *ngIf="each.distanceText">&nbsp;Distance= {{ each.distanceText }}</p>
                   <p *ngIf="each.durationText">&nbsp;Duration= {{ each.durationText }}</p>
-                  <p *ngIf="each.optometrist.workplaceAddress">&nbsp;Address = {{ each.optometrist.workplaceAddress }}</p>
+                  <p *ngIf="each.optometrist.workplaceAddress">&nbsp;Address = {{ each.optometrist.workplaceAddress }}</p> -->
 
                   <br>
                   <p *ngIf="each.optometrist.workplaceName">• {{ each.optometrist.workplaceName }}</p>
