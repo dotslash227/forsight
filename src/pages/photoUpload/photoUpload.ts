@@ -17,7 +17,7 @@ export class PhotoUploadPage {
   errorMsg: string;
 
   constructor(public navCtrl: NavController, private http: Http, private transfer: Transfer, private camera: Camera) {
-    this.baseUrl = 'http://oapp.delhinerds.com/photoUpload/';
+    this.baseUrl = 'http://127.0.0.1:8000/photoUpload/';
     this.errorMsg = null;
   }
   upload() {

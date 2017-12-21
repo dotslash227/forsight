@@ -24,6 +24,11 @@
     <p *ngIf="errorMsg" style="color:red; background-color: white;">{{errorMsg}}</p>
     <button ion-button color="secondary" block (click)="login()">Log In</button>
     <button ion-button color="primary" block (click)="gotoSignup()">Signup</button>
+    <h4>OR</h4>
+  </div>
+
+  <div padding style="margin-top:-20px;">
+    <img (click)="fblogin()" src="assets/fb.png" style="width:200px;" />
   </div>
 
 </ion-content>

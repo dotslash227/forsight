@@ -2,7 +2,7 @@
   "proxies": [
     {
       "path": "/login",
-      "proxyUrl": "http://192.178.7.5:8000/login"
+      "proxyUrl": "http://192.178.5.73:8000/login"
     },
     {
       "path": "/signup",

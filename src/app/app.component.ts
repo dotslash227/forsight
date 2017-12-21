@@ -32,7 +32,7 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private http: Http) {
     this.initializeApp();
-    this.baseUrl = 'http://oapp.delhinerds.com/logout/';
+    this.baseUrl = 'http://127.0.0.1:8000/logout/';
 
     // used for an example of ngFor and navigation
     this.pages = [

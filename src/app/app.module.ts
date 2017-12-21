@@ -48,6 +48,9 @@ import {OptometristListPage} from '../pages/optometristList/optometristList';
 
 import { DirectionsPage } from '../pages/directions/directions';
 import { FilterPipe } from '../pages/search/search.pipe';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
+
 
 @NgModule({
   declarations: [
@@ -99,6 +102,7 @@ import { FilterPipe } from '../pages/search/search.pipe';
     MapDirPage,
   ],
   providers: [
+    Facebook,
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -111,6 +115,7 @@ import { FilterPipe } from '../pages/search/search.pipe';
     StatusBar,
     CallNumber,
     EmailComposer,
+    LaunchNavigator,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
