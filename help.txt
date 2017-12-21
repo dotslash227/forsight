@@ -1,6 +1,6 @@
-export PATH=${PATH}:/home/arjun/android_sdk/Android/Sdk/platform-tools:/home/arjun/android_sdk/Android/Sdk/tools
+export PATH=${PATH}:/home/arjun/Android/Sdk/platform-tools:/home/arjun/Android/Sdk/tools
 
-export ANDROID_HOME=/home/arjun/android_sdk/Android/Sdk
+export ANDROID_HOME=/home/arjun/Android/Sdk
 
 
 To create and start AVD
