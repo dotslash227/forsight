@@ -26,17 +26,19 @@
               <ion-list *ngFor="let each of optometristsByDistance">
                 <ion-list-header>
                   <h2>{{ each.optometrist.name }}</h2>
-                  <!-- <button ion-button color="light" (click)="getDirections(each)">Get Directions On Map</button> -->
+                  <button ion-button color="light" (click)="getDirections(each)">Get Directions On Map</button>
                   <br>
                   <button ion-button color="light"  (click)="search(each.optometrist)">Show Optometrist Profile</button>
                   <br>
-                  <!-- <p>From your current location:</p>
+                  <p>From your current location:</p>
                   <p *ngIf="each.distanceText">&nbsp;Distance= {{ each.distanceText }}</p>
                   <p *ngIf="each.durationText">&nbsp;Duration= {{ each.durationText }}</p>
-                  <p *ngIf="each.optometrist.workplaceAddress">&nbsp;Address = {{ each.optometrist.workplaceAddress }}</p> -->
+                  <p *ngIf="each.optometrist.workplaceAddress">&nbsp;Address = {{ each.optometrist.workplaceAddress }}
 
                   <br>
-                  <p *ngIf="each.optometrist.workplaceName">• {{ each.optometrist.workplaceName }}</p>
+                  <p>Workplace : {{ each.workplace.name}}</p>
+                  <p>Workplace Address: {{ each.workplace.address}}</p>
+                  
                   <p *ngIf="each.optometrist.qualification">• {{ each.optometrist.qualification }} </p>
                   <p *ngIf="each.optometrist.workExperience">• {{ each.optometrist.workExperience }}</p>
                 </ion-list-header>

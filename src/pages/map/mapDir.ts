@@ -24,8 +24,8 @@ export class MapDirPage {
     // console.log("data in mapDir.ts = ", this.data);
     this.userLon = this.data["userLon"];
     this.userLat = this.data["userLat"];
-    this.optoLon = Number(this.data["optometrist"]["lon"]);
-    this.optoLat = Number(this.data["optometrist"]["lat"]);
+    this.optoLon = Number(this.data["optoLon"]);
+    this.optoLat = Number(this.data["optoLat"]);
   }
 
   ionViewDidLoad() {

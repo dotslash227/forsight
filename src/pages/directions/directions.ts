@@ -22,7 +22,10 @@ export class DirectionsPage {
     this.optometrist = params.get('item');
     this.lon = params.get('lon');
     this.lat = params.get('lat');
-    this.data = { "optometrist": this.optometrist, "userLon": this.lon, "userLat": this.lat };
+    this.optoLon = params.get('optoLon');
+    this.optoLat = params.get('optoLat');
+
+    this.data = { "optometrist": this.optometrist, "userLon": this.lon, "userLat": this.lat, "optoLon": this.optoLon, "optoLat": this.optoLat };
   }
 
 

@@ -65,7 +65,7 @@ export class MapPage {
       return this.http.post(this.baseUrl, { lon: this.lon, lat: this.lat }, options)
         .map(res => res.json())
         .subscribe(response => {
-          // console.log("response=", response["optometrists"]);
+          console.log("response here new=", response);
           this.optometristsByDistance = response["optometrists"];
         });
     });
@@ -86,7 +86,10 @@ export class MapPage {
     this.navCtrl.push(DirectionsPage, {
       'item': item["optometrist"],
       'lon': this.lon,
-      'lat': this.lat
+      'lat': this.lat,
+      'optoLon': item["workplace"]["long"],
+      'optoLat': item["workplace"]["lat"],
+         
     })
   }
 

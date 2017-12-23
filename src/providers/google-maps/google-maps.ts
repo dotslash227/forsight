@@ -18,6 +18,8 @@ export class GoogleMapsProvider {
   markers: any = [];
   apiKey: string;
   optometrists: any = [];
+  workplaces: any = [];
+  
 
 
   constructor(public connectivityService: ConnectivityProvider,
@@ -205,9 +207,16 @@ export class GoogleMapsProvider {
 
   getOptometrists() {
 
-    this.optometrists = this.optometristService.getOptometrists()
-    for (let each of this.optometrists) {
-      this.addMarker(Number(each["lat"]), Number(each["lon"]), each["name"], "assets/icon/opto.png");
+    // this.optometrists = this.optometristService.getOptometrists()
+    
+    // for (let each of this.optometrists) {
+    //   this.addMarker(Number(each["lat"]), Number(each["lon"]), each["name"], "assets/icon/opto.png");
+    // }
+
+    this.workplaces = this.optometristService.getWorkplaces()
+    
+    for (let each of this.workplaces) {
+      this.addMarker(Number(each["latitutde"]), Number(each["longitude"]), each["workplace_name"], "assets/icon/opto.png");
     }
 
   }

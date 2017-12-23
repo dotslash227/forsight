@@ -11,6 +11,7 @@ export class OptometristService {
 
 
   optometrists: any;
+  workplaces: any;
   specialisations: any;
 
   lon: number;
@@ -20,8 +21,12 @@ export class OptometristService {
     this.http = http;
     this.baseUrl = 'http://127.0.0.1:8000/optometrist/';
     this.baseUrl2 = 'http://127.0.0.1:8000/specialisation/';
+    this.baseUrl3 = 'http://127.0.0.1:8000/workplace/';
+
 
     this.getOptometristsInit();
+    this.getWorkplaceInit();
+    
   }
 
   getOptometristsInit() {
@@ -31,9 +36,20 @@ export class OptometristService {
         this.optometrists = data;
       });
   }
+  getWorkplaceInit(){
+    return this.http.get(this.baseUrl3)
+      .map(res => res.json())
+      .subscribe(data => {
+        this.workplaces = data;
+      });
+  }
 
   getOptometrists() {
     return this.optometrists;
+  }
+
+  getWorkplaces() {
+    return this.workplaces;
   }
 
   getOptometristsSubs() {
