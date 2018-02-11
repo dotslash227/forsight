@@ -30,7 +30,7 @@ export class SignupPage {
 
 
   constructor(public navCtrl: NavController, private http: Http) {
-    this.baseUrl = 'http://127.0.0.1:8000/signup/';
+    this.baseUrl = 'http://oapp.delhinerds.com/signup/';
     this.errorMsg = null;
   }
   isValidUsername() {

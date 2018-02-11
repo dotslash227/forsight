@@ -18,7 +18,7 @@ export class LoginPage {
   password: string;
   errorMsg: string;
   constructor(public navCtrl: NavController, private http: Http, public storage: Storage, private fb: Facebook) {
-    this.baseUrl = 'http://127.0.0.1:8000/login/';
+    this.baseUrl = 'http://oapp.delhinerds.com/login/';
     this.errorMsg = null;
   }
   gotoSignup() {

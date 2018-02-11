@@ -30,7 +30,7 @@ export class MapPage {
     // private optometristService: OptometristService,
     private http: Http,
   ) {
-    this.baseUrl = 'http://127.0.0.1:8000/distance/';
+    this.baseUrl = 'http://oapp.delhinerds.com/distance/';
     this.getOptometrists();
   }
 
@@ -74,7 +74,7 @@ export class MapPage {
 
   search(item) {
     // console.log("item.photo in maps.ts before=", item.photo);
-    item.photo = "http://127.0.0.1:8000" + item.photo;
+    item.photo = "http://oapp.delhinerds.com" + item.photo;
     // console.log("item.photo in maps.ts after=", item.photo);
 
     this.navCtrl.push(OptometristPage, {

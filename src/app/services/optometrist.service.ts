@@ -19,9 +19,9 @@ export class OptometristService {
 
   constructor(http: Http) {
     this.http = http;
-    this.baseUrl = 'http://127.0.0.1:8000/optometrist/';
-    this.baseUrl2 = 'http://127.0.0.1:8000/specialisation/';
-    this.baseUrl3 = 'http://127.0.0.1:8000/workplace/';
+    this.baseUrl = 'http://oapp.delhinerds.com/optometrist/';
+    this.baseUrl2 = 'http://oapp.delhinerds.com/specialisation/';
+    this.baseUrl3 = 'http://oapp.delhinerds.com/workplace/';
 
 
     this.getOptometristsInit();
