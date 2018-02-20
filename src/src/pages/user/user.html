@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      User Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="buttons-components-page" style="background-color: #EBF5FB;">
+  <!-- <div class="background-image"></div> -->
+
+  <ion-card>
+    <ion-card-content>
+      <img src="assets/icon/user.png" />
+    </ion-card-content>
+
+    <ion-item>
+      <button ion-button clear item-end (click)="editUser()">Edit Profile</button>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>My Information</ion-card-header>
+    <ion-list>
+      <ion-item>
+        Name: {{name}}
+
+      </ion-item>
+
+      <ion-item>
+        Age: {{this.age}}
+
+      </ion-item>
+
+      <ion-item>
+        Phone: {{phone}}
+
+      </ion-item>
+
+      <ion-item>
+        Address: {{address}}
+
+      </ion-item>
+
+    </ion-list>
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>My Prescription</ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card-header>Right Eye (OD)</ion-card-header>
+          <ion-item>Sph:{{od_sph}}</ion-item>
+          <ion-item>Cyl:{{od_cyl}}</ion-item>
+          <ion-item>Axis:{{od_axis}}</ion-item>
+          <ion-item>VA:{{od_va}}</ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-card-header>Left Eye (OD)</ion-card-header>
+          <ion-item>Sph:{{os_sph}}</ion-item>
+          <ion-item>Cyl:{{os_cyl}}</ion-item>
+          <ion-item>Axis:{{os_axis}}</ion-item>
+          <ion-item>VA:{{os_va}}</ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>

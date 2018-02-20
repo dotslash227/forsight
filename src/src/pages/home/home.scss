@@ -1,0 +1,37 @@
+.home{
+  h1 {
+    font-size: 15px; //Preferred size here
+  }
+  ion-icon{
+    font-size: 30px; //Preferred size here
+  }
+  ion-card-header{
+    padding: 1px;
+  }
+  .item-md {
+    padding-left: 2px;
+  }
+  .item-md.item-block .item-inner{
+    padding-right: 3px;
+  }
+  ion-col{
+    margin-top:-12px;
+  }
+  ion-card{
+    padding:25px;
+    height:125px;
+    width:100vw;
+    margin-left:-10px;
+    // background-image: url(http://elbelleza.com/static/images/imgs/big-banner2.jpg);
+    background-size: cover;
+    opacity: 0.6
+  }
+  ion-card h1{
+    color:white;
+    text-align:center;
+    display: block;
+    font-size: 25px;
+    font-style: oblique;
+    margin-top:20px;
+  }
+}

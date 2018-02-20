@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Optometrist</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="optometrist">
+  <div id="profile-bg" style="background: url(assets/icon/bg.jpg);">
+    <img id="profile-image" src={{item.photo}}/>
+    <h3 id="profile-name">{{item.name}}</h3>
+  </div>
+  <div id="content">
+    <div id="profile-info">
+      <span id="profile-description">
+          <h1 style="color:black" >Specialisation:</h1>
+          <h4 *ngFor="let spec of item.specialisation">
+            {{ spec.title }}
+          </h4>
+          <h1 style="color:black" >Education and experience</h1>
+          <h4 *ngIf="item.qualification">{{ item.qualification }}</h4>
+          <h4 *ngIf="item.workExperience">{{ item.workExperience }}</h4>
+          <h1 style="color:black" >Workplaces:</h1>
+          <h5 *ngFor="let place of item.workplaceadd">
+            <a (click)="navigate(place)">{{place}}</a>
+          </h5>
+
+          <!-- <a (click)="navigate(item.workplaceAddress)"><h5 *ngIf="item.workplaceAddress">{{ item.workplaceadd }}</h5></a> -->
+          <p style="font-size:10px; color:black;">Click on the address to switch to Google Maps for Navigation</p>
+
+          <h1 style="color:black" >Contact Details:</h1>
+          <h5 *ngIf="item.email">Email: {{ item.email }}
+            <span>
+              <ion-icon name="ios-mail-outline"></ion-icon>
+              <button ionic-button (click)="email(item.email)">Email</button>
+            </span>
+          </h5>
+          <h5 *ngIf="item.contact">Phone: {{ item.contact }}
+            <span>
+              <ion-icon name="ios-call-outline"></ion-icon>
+              <button ionic-button><a href="tel:{{item.contact}}">Call</a></button>
+            </span>
+          </h5>
+          <br><br>
+      </span>
+    </div>
+  </div>
+</ion-content>

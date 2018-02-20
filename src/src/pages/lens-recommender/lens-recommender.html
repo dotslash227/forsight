@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Forsight
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <img [src]="imageResult" alt="ion_vision" height="300">
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Recommended Lens
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item  *ngIf="dominantColors">
+          <img [src]="recommendedLens">
+
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab right bottom>
+      <button ion-fab color="danger" (click)="capture()"><ion-icon ios="ios-camera" md="md-camera"></ion-icon></button>
+  </ion-fab>
+</ion-content>

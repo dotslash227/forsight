@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Edit Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: #EBF5FB;">
+  <!-- <div class="background-image"></div> -->
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Age:</ion-label>
+      <ion-input type="number" [(ngModel)]="age"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Phone:</ion-label>
+      <ion-input type="number" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Address:</ion-label>
+      <ion-input type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+
+    <ion-card-header>Enter your Rx for right eye (OD)</ion-card-header>
+
+    <ion-item>
+      <ion-label fixed>Spherical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_sph"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Cylindrical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_cyl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Axis:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_axis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Visual Acuity:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_va"></ion-input>
+    </ion-item>
+
+    <ion-card-header>Enter your Rx for left eye (OS)</ion-card-header>
+
+    <ion-item>
+      <ion-label fixed>Spherical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_sph"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Cylindrical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_cyl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Axis:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_axis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Visual Acuity:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_va"></ion-input>
+    </ion-item>
+
+
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="setData()">Update Profile</button>
+  </div>
+
+
+</ion-content>

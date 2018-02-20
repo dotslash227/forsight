@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Forsight | Search your optometrist</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="home">
+
+  <!-- <div class="background-image"></div> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 >
+        <ion-card (click)="searchOptoByName()" style="background-color:red;">
+          <h1>Search By Name</h1>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
+        <ion-card (click)="searchOptoBySpec()" style="background-color:blue;">
+          <h1>Search By Specialisation</h1>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
+        <ion-card (click)="nearMe()" style="background-color: brown;">
+          <h1>Optometrists near me</h1>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
+        <ion-card (click)="profile()" style="background-color: purple;">
+          <h1>My Profile</h1>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
+        <ion-card (click)="news()" style="background-color:green;">
+          <h1>News</h1>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
+        <ion-card (click)="detectFace()" style="background-color:red;">
+          <h1>Specs Recommender</h1>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  col-12>
+        <ion-card (click)="recommendLens()" style="background-color:red;">
+          <h1>Lens Recommender</h1>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

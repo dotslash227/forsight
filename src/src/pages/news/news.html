@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      News
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: #EBF5FB;">
+  <!-- <div class="background-image"></div> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6 *ngFor="let item of items">
+        <ion-card (click)="viewItem(item)">
+          <ion-card-header>
+            <ion-item text-wrap>
+              <h2>{{item.title}}</h2>
+              <ion-thumbnail *ngIf="item.photo" item-end>
+                <img src="{{item.photo}}" width="50px" height="50px" alt="">
+              </ion-thumbnail>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
