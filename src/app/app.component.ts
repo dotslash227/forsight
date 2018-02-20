@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { LoadingController } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { NewsPage } from '../pages/news/news';
 import { SearchPage } from '../pages/search/search';
@@ -10,19 +10,25 @@ import { SearchBySpecPage } from '../pages/search/searchBySpec';
 import { MapPage } from '../pages/map/map';
 import { UserPage } from '../pages/user/user';
 import {PhotoUploadPage} from '../pages/photoUpload/photoUpload';
-
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { ToastController } from 'ionic-angular';
 import { LoginPage } from '../pages/login/login';
 import { OptometristListPage } from '../pages/optometristList/optometristList';
-
+import { AlertController } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
 import {Http} from '@angular/http';
-
+import {FaceDetectionResultPage} from '../pages/face-detection-result/face-detection-result';
+import {LensRecommenderPage} from '../pages/lens-recommender/lens-recommender';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-
+  public photos:any;
+  public base64Image: string;
   rootPage: any = LoginPage;
+
+
   // rootPag: any = OptometristListPage;
   // rootPage: any = PhotoUploadPage;
 
@@ -30,7 +36,15 @@ export class MyApp {
   baseUrl: string;
   pages: Array<{ title: string, component: any, icon: string }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private http: Http) {
+  constructor(public toastCtrl: ToastController,
+              public alertCtrl: AlertController,
+              public loadingCtrl: LoadingController,
+              public httpClient: HttpClient,
+              private camera: Camera,
+              public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
+              private http: Http) {
     this.initializeApp();
     this.baseUrl = 'http://oapp.delhinerds.com/logout/';
 
@@ -43,7 +57,8 @@ export class MyApp {
       { title: 'NearMe', component: MapPage, icon: 'ios-locate-outline', },
       { title: 'Profile', component: UserPage, icon: 'md-person', },
       { title: 'Logout', component: LoginPage, icon: 'md-log-out', },
-
+      {title:'Specs Recommender', component: FaceDetectionResultPage, icon: 'glasses'},
+      {title:'Lens Recommender', component: LensRecommenderPage, icon: 'eye'     }
     ];
 
   }
@@ -56,6 +71,9 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
+
+
+
 
   openPage(page) {
     if (page.component == LoginPage) {
@@ -75,4 +93,8 @@ export class MyApp {
       this.nav.push(page.component);
     }
   }
+
+
+
+  
 }
