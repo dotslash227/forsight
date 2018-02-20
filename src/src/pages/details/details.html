@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{item.title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="buttons-components-page" style="background-color: #EBF5FB;">
+  <!-- <div class="background-image"></div> -->
+  <ion-card>
+    <ion-item>
+      <img src={{item.photo}} />
+    </ion-item>
+    <ion-card-content>
+      <ion-card-title>
+        {{item.title}}
+      </ion-card-title>
+      <ion-list>
+        <ion-item text-wrap>
+          Author:
+          <ion-note>{{item.author}}</ion-note>
+          <br><br>
+          Subtitle:
+          {{item.subtitle}}
+          <br><br>
+          Content:<p [innerHTML]="item.content"></p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

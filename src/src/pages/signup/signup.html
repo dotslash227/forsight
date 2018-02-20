@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content text-center class="login" padding="true" style="background-color: #EBF5FB;">
+
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Username</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <p *ngIf="!isValidUsername()" style="color:red; background-color: white;">Username Already Exists!!!</p>
+
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input type="email" value="" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Re-Enter Password</ion-label>
+      <ion-input type="password" [(ngModel)]="repassword"></ion-input>
+    </ion-item>
+
+    <p *ngIf="password != repassword" style="color:red; background-color: white;">Passwords doesn't match!!!</p>
+
+    <ion-item>
+      <ion-label fixed>Name</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Age:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Phone:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Address:</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="address"></ion-input>
+    </ion-item>
+
+    <ion-card-header>Enter your Rx for right eye (OD)</ion-card-header>
+
+    <ion-item>
+      <ion-label fixed>Spherical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_sph"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Cylindrical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_cyl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Axis:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_axis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Visual Acuity:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="od_va"></ion-input>
+    </ion-item>
+
+    <ion-card-header>Enter your Rx for left eye (OS)</ion-card-header>
+
+    <ion-item>
+      <ion-label fixed>Spherical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_sph"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Cylindrical:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_cyl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Axis:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_axis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Visual Acuity:</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="os_va"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <div padding>
+    <p>
+      By signing up, you agree to accept our terms and conditions and privacy policy
+    </p>
+    <button ion-button color="primary" block (click)="signup()">Signup</button>
+  </div>
+
+  <a href="#" style="color: blue;" (click)="gotoLogin()">Already have an account? Login.</a>
+
+</ion-content>

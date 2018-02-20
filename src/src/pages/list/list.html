@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Directions
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <h3>Total Duration: {{maps.duration}}</h3>
+      <h3>Total Distance: {{maps.distance}}</h3>
+    </ion-list-header>
+    <ion-item *ngFor="let item of maps.directions">
+      <ion-avatar item-left>
+        <ion-icon name="pin"></ion-icon>
+      </ion-avatar>
+      <h2 [innerHTML]="item.instructions"></h2>
+      <p [innerHTML]="item.distance.text"></p>
+      <p [innerHTML]="item.duration.text"></p>
+    </ion-item>
+  </ion-list>
+</ion-content>

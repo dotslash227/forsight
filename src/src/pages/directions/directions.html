@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Directions
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-tabs color="light">
+  <ion-tab [root]="tab1Root" [rootParams]="data" tabTitle="Map" tabIcon="navigate"></ion-tab>
+  <ion-tab [root]="tab2Root" [rootParams]="data" tabTitle="Directions" tabIcon="list"></ion-tab>
+</ion-tabs>
