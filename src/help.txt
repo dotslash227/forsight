@@ -1,0 +1,57 @@
+export PATH=${PATH}:/home/arjun/Android/Sdk/platform-tools:/home/arjun/Android/Sdk/tools
+
+export ANDROID_HOME=/home/arjun/Android/Sdk
+
+
+To create and start AVD
+
+ ./sdkmanager "system-images;android-23;google_apis;x86"
+
+./avdmanager create avd -n test -k "system-images;android-23;google_apis;x86" -b x86 -c 100M -d 7 -f
+
+echo no | /home/arjun/android_sdk/Android/Sdk/tools/bin/avdmanager create avd --force --name testAVD --abi google_apis/x86 --package 'system-images;android-23;google_apis;x86'
+
+
+
+cordova prepare android
+cordova run android --stacktrace
+ionic serve
+
+
+
+ionic cordova build --release android
+
+ionic cordova plugin add https://github.com/mapsplugin/cordova-plugin-googlemaps#multiple_maps --variable API_KEY_FOR_ANDROID=AIzaSyCNy3fNswCBZ2gX162iYCwPQ8kFkQxqmNI --variable API_KEY_FOR_IOS=AIzaSyCNy3fNswCBZ2gX162iYCwPQ8kFkQxqmNI
+npm install --save @ionic-native/google-maps
+
+cordova platform add browser
+
+
+ionic g provider Connectivity
+ionic g provider GoogleMaps
+ionic g provider Locations
+
+npm install @types/cordova-plugin-network-information --save (optional)
+
+
+[link for maps help=> https://www.joshmorony.com/create-a-nearby-places-list-with-google-maps-in-ionic-2-part-1/]
+
+
+ionic cordova plugin add cordova-sqlite-storage
+npm install --save @ionic/storage
+
+cordova plugin add cordova-plugin-whitelist
+ionic plugin add cordova-plugin-geolocation --save
+
+ionic cordova plugin add cordova-plugin-file-transfer
+npm install --save @ionic-native/transfer
+
+ionic cordova plugin add cordova-plugin-camera
+npm install --save @ionic-native/camera
+
+
+ionic cordova plugin add call-number
+npm install --save @ionic-native/call-number
+
+ionic cordova plugin add cordova-plugin-email-composer
+npm install --save @ionic-native/email-composer

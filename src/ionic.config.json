@@ -1,0 +1,8 @@
+{
+  "name": "optometrists",
+  "app_id": "c62d0853",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

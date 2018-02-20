@@ -1,0 +1,41 @@
+,
+  "proxies": [
+    {
+      "path": "/login",
+      "proxyUrl": "http://192.178.5.73:8000/login"
+    },
+    {
+      "path": "/signup",
+      "proxyUrl": "http://192.178.7.5:8000/signup"
+    },
+    {
+      "path": "/logout",
+      "proxyUrl": "http://192.178.7.5:8000/logout"
+    },
+    {
+      "path": "/editUser",
+      "proxyUrl": "http://192.178.7.5:8000/editUser"
+    },
+    {
+      "path": "/optometrist",
+      "proxyUrl": "http://192.178.7.5:8000/optometrist"
+    },
+    {
+      "path": "/distance",
+      "proxyUrl": "http://192.178.7.5:8000/distance"
+    },
+    {
+      "path": "/media",
+      "proxyUrl": "http://192.178.7.5:8000/media"
+    },
+    {
+      "path": "/news",
+      "proxyUrl": "http://192.178.7.5:8000/news"
+    },
+    {
+      "path": "/specialisation",
+      "proxyUrl": "http://192.178.7.5:8000/specialisation"
+    }
+
+
+  ]
