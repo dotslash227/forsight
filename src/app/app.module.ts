@@ -4,11 +4,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-
 import { HomePage } from '../pages/home/home';
 import { NewsPage } from '../pages/news/news';
 import { DetailsPage } from '../pages/details/details';
@@ -16,6 +17,8 @@ import { UserPage } from '../pages/user/user';
 import { EditUserPage } from '../pages/user/editUser';
 import { OptometristPage } from '../pages/optometrist/optometrist';
 
+import {FaceDetectionResultPage} from '../pages/face-detection-result/face-detection-result';
+import {LensRecommenderPage} from '../pages/lens-recommender/lens-recommender';
 
 import { SearchPage } from '../pages/search/search';
 import { SearchBySpecPage } from '../pages/search/searchBySpec';
@@ -71,12 +74,15 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
     MapPage,
     OptometristListPage,
     DirectionsPage,
+    FaceDetectionResultPage,
     MapDirPage,
     FilterPipe,
+    LensRecommenderPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -100,6 +106,8 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
     OptometristListPage,
     DirectionsPage,
     MapDirPage,
+    FaceDetectionResultPage,
+    LensRecommenderPage
   ],
   providers: [
     Facebook,

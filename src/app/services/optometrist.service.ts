@@ -8,7 +8,7 @@ export class OptometristService {
   http: any;
   baseUrl: string;
   baseUrl2: string;
-
+  baseUrl3: string;
 
   optometrists: any;
   workplaces: any;
@@ -26,7 +26,7 @@ export class OptometristService {
 
     this.getOptometristsInit();
     this.getWorkplaceInit();
-    
+
   }
 
   getOptometristsInit() {

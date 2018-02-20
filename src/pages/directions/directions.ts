@@ -18,6 +18,8 @@ export class DirectionsPage {
   lon: number;
   lat: number
   data: any;
+  optoLon:any;
+  optoLat:any;
   constructor(params: NavParams, public nav:NavController) {
     this.optometrist = params.get('item');
     this.lon = params.get('lon');
